@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was originally bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is now a modified version of [MangoHack's 2019 Live Site](https://github.com/MangoHacks/mango2019-live).
 
 ## Available Scripts
 
