@@ -1,10 +1,11 @@
 {
-  "name": "mango-2019-live",
+  "name": "2020-live-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.7.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3",
     "socket.io-client": "^2.2.0"

@@ -15,57 +15,41 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/*<ResBlobTop
-          style={{ position: "fixed", zIndex: "-1" }}
-          topColor="#47205f"
-          bottomColor="#8f40bf"
-        />
-        <ResBlobTop
-          style={{
-            position: "fixed",
-            bottom: 0,
-            right: 0,
-            zIndex: "-1",
-            trasnform: "rotate(90degs)",
-            transform: "scale(-1, -1)"
-          }}
-          topColor="#47205f"
-          bottomColor="#8f40bf"
-        />*/}
         <div className="container">
-          <div className="header">
+          <div className="header row justify-content-center">
             <Header />
-            <div className="header-info">
-              <h5>
-                WIFI: <strong>????</strong>
-              </h5>
-              <h5>
-                WIFI Password: <strong>????</strong>
-              </h5>
-              <a
-                href="https://phoenixhacks.com/photos"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <h5 style={{ color: "#FF363F" }}>
-                  <b>Media</b>
-                </h5>
-              </a>
-            </div>
           </div>
+      
+          <div className="content row align-self-center">
 
-          <div className="schedule-announcements">
-            <Schedule />
-            <Announcements />
+            <div className="section links">
+
+            </div>
+
+            <div className="section schedule-tabs">
+              <Schedule />
+              {/*
+              <Tabs defaultActiveKey="all-events" id="uncontrolled-tab-example">
+                <Tab eventKey="all-events" title="All Events">
+                  <Schedule />
+                </Tab>
+                <Tab eventKey="logistics" title="Logistics">
+                  <Schedule />
+                </Tab>
+                <Tab eventKey="meals" title="Meals">
+                  <Meals />
+                </Tab>
+                <Tab eventKey="workshops" title="Workshops">
+                  <Workshops />
+                </Tab>
+                <Tab eventKey="activities" title="Activities">
+                  <Challenges />
+                </Tab>
+              </Tabs>*/}
+            </div>
+            <hr />
+            <Maps />
           </div>
-          <hr />
-          <Meals />
-          <hr />
-          <Challenges />
-          <hr />
-          <Workshops />
-          <hr />
-          <Maps />
         </div>
       </React.Fragment>
     );

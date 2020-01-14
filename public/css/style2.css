@@ -1,0 +1,280 @@
+@font-face {
+  font-family: 'PhoenixHacks';
+  src: url('../fonts/PhoenixHacks-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*========== Sections ==========*/
+.section {
+  
+}
+
+/*---------- Header ----------*/
+.header {
+  text-align: center;
+  padding: 0 10px 0 10px;
+  background-color: #fdfffc;
+  border-radius: 0 0 20px 20px;
+  color: black;
+  align-content: center;
+  box-shadow: 2px 2px 1px black;
+}
+
+.header a:hover {
+  text-decoration: none;
+}
+
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;
+}
+
+.title .logo-image {
+  margin-right: 5px;
+  height: 100%;
+}
+
+.title .logo-text {
+  font-family: 'PhoenixHacks', sans-serif;
+  color: black;
+}
+
+.logo-text .live {
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  color: #00E174;/*
+  border: 3px solid #00E174;*/
+}
+
+.timer {
+  margin-left: 20px;
+  font-weight: 900;
+  /*border: 3px solid #dc3545;*/
+}
+
+@media (min-width: 1000px) {
+  .header .title {
+    height: 64px;
+  }
+
+  .title .logo-text {
+    font-size: 48px;
+  }
+
+  .logo-text .capital {
+    font-size: 64px;
+  }
+
+  .timer {
+    height: 64px;
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header .title {
+    height: 48px;
+  }
+
+  .title .logo-text {
+    font-size: 36px;
+  }
+
+  .logo-text .capital {
+    font-size: 48px;
+  }
+
+  .timer {
+    height: 48px;
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 590px) {
+  .header .title {
+    height: 36px;
+  }
+
+  .logo-text .capital {
+    font-size: 36px;
+  }
+
+  .title .logo-text {
+    font-size: 24px;
+  }
+
+  .timer {
+    height: 36px;
+    font-size: 36px;
+  }
+}
+
+/*---------- Content ----------*/
+.content {
+  /*background-color: #e5e5e5;*/
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;/*
+  border: 2px solid #23282b;
+  border-top: none;
+  border-bottom: none;*/
+  z-index: -1;
+}
+
+.schedule-tabs {
+
+}
+
+.nav-tabs {
+  background-color: #cecece !important;
+  font-weight: bold !important;
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.nav-tabs .active {
+  background-color: white !important;
+}
+
+/*---------- Schedule ----------*/
+
+.schedule-announcements {
+  justify-content: space-between;
+  padding: 40px;
+  display: flex;
+  border-radius: 20px;
+}
+
+.schedule {
+  background-color: #e5e5e5;
+  font-size: 1.28em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: black;
+  position: relative;
+}
+
+/*---------- Meals ----------*/
+.schedule .days {
+  display: flex;
+}
+
+.schedule h2 {
+  margin-bottom: 16px;
+}
+
+.schedule .day {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+}
+
+.schedule .day h3 {
+  font-size: 1.25em;
+}
+
+.schedule .day .times li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.schedule .day .times .time {
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 20px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+}
+
+.schedule .day .times {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+
+/*---------- end Meals ----------*/
+/*---------- Schedule ----------*/
+
+.announcements-list,
+.schedule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* width: 70%; */
+  overflow: scroll;
+  max-height: 750px;
+  padding: 10px 30px;
+  border-radius: 6px;
+  background: #fafafa;
+  box-shadow: 0 0px 32px -15px #fff inset;
+}
+/*
+.schedule-list {
+  flex: 2 1 66%;
+}
+
+.announcements-list {
+  flex: 1 1 33%;
+  padding: 12px;
+}
+*/
+.schedule-list li {
+  margin: 10px auto;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+}/*
+
+.schedule {
+  margin-right: 16px;
+}*/
+
+.schedule {
+  background: white;
+  padding: 20px 20px 0 20px;
+}
+
+.meals {
+  background: white;
+  padding: 20px 20px 0 20px;
+}
+
+.challenges {
+  background: white;
+  padding: 20px 20px 0 20px;
+}
+
+.workshops {
+  background: white;
+  padding: 20px 20px 0 20px;
+}
+
+/*---------- Footer ----------*/
+.footer {
+  
+}
+
+/*---------- Animation ----------*/
+.Blink {
+  animation: blinker 1.5s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+  padding-bottom: 10px;
+}
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
