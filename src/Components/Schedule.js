@@ -35,7 +35,7 @@ export default class Schedule extends React.Component {
   render() {
     const data = require("../data/schedule.json");
     const schedule = data.schedule;
-    const logistics = schedule.filter(this.typeFilter("general"));
+    const logistics = schedule.filter(this.typeFilter("logistics"));
     const meals = schedule.filter(this.typeFilter("meal"));
     const workshops = schedule.filter(this.typeFilter("workshop"));
     const activities = schedule.filter(this.typeFilter("activity"));

@@ -3,19 +3,19 @@
         {
             "event": "Check-In",
             "time": "9:00am - 11:00am",
-            "type": "general",
+            "type": "logistics",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Opening Ceremony",
             "time": "11:00am - 12:00am",
-            "type": "general",
+            "type": "logistics",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Hacking Begins",
             "time": "12:00am",
-            "type": "general",
+            "type": "logistics",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
@@ -57,13 +57,13 @@
         {
             "event": "DevPost Submissions Due",
             "time": "11:00am - 12:00am",
-            "type": "general",
+            "type": "logistics",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Hacking Ends",
             "time": "12:00pm",
-            "type": "general",
+            "type": "logistics",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
@@ -75,19 +75,25 @@
         {
             "event": "Demoing & Judging",
             "time": "1:00pm - 3:30pm",
-            "type": "general",
+            "type": "logistics",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Deliberations",
             "time": "3:30pm - 4:00pm",
-            "type": "general",
+            "type": "logistics",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Closing Ceremony",
             "time": "4:00pm - 5:00pm",
-            "type": "general",
+            "type": "logistics",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "event": "Workshop Placeholder",
+            "time": "4:00pm - 5:00pm",
+            "type": "workshop",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         }
     ]

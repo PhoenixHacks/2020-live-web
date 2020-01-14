@@ -28,24 +28,6 @@ class App extends React.Component {
 
             <div className="section schedule-tabs">
               <Schedule />
-              {/*
-              <Tabs defaultActiveKey="all-events" id="uncontrolled-tab-example">
-                <Tab eventKey="all-events" title="All Events">
-                  <Schedule />
-                </Tab>
-                <Tab eventKey="logistics" title="Logistics">
-                  <Schedule />
-                </Tab>
-                <Tab eventKey="meals" title="Meals">
-                  <Meals />
-                </Tab>
-                <Tab eventKey="workshops" title="Workshops">
-                  <Workshops />
-                </Tab>
-                <Tab eventKey="activities" title="Activities">
-                  <Challenges />
-                </Tab>
-              </Tabs>*/}
             </div>
             <hr />
             <Maps />

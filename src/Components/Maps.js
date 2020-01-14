@@ -8,7 +8,8 @@ export default class Maps extends React.Component {
           <strong>Maps</strong>
         </h2>
         <div>
-          <img intrinsicsize="690x518" style={{maxWidth: "100%"}} src={require("../images/IST.png")} />
+          <img className="map" src={require("../images/IST.png")} />
+          <img className="map" src={require("../images/Campus.jpg")} />
         </div>
         <br />
       </div>
