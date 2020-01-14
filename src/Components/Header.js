@@ -9,8 +9,8 @@ export default class Header extends React.Component {
   componentDidMount = () => this.countdown();
 
   countdown = () => {
-    /*let countDownDate = new Date("Jan 26, 2020 12:00:00").getTime();*/
-    let countDownDate = new Date("Jan 15, 2020 12:00:00").getTime();
+    let countDownDate = new Date("Jan 26, 2020 12:00:00").getTime();
+    /*let countDownDate = new Date("Jan 15, 2020 12:00:00").getTime();*/
 
     return setInterval(() => {
       let now = new Date().getTime();
@@ -58,37 +58,6 @@ export default class Header extends React.Component {
           </div>
           {isLive ? <h1 className="timer col">{timer}</h1> : <h1 className="timer col text-danger">{timer}</h1>}
         </nav>
-        
-        {/*
-        <hr />
-        <div className="header-container row">
-          <div className="header-btn-container">
-            <a href="https://phoenixhacks.com/slack" target="_blank" rel="noopener noreferrer">
-              <button className="btn header-btn">Slack</button>
-            </a>
-            <a href="https://phoenixhacks2020.devpost.com" target="_blank" rel="noopener noreferrer">
-              <button className="btn header-btn">Devpost</button>
-            </a>
-          </div>
-
-          <div className="header-info">
-            <h5>WIFI: <strong>????</strong></h5>
-            <h5>WIFI Password: <strong>????</strong></h5>
-            <a
-              href="https://phoenixhacks.com/photos"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h5 style={{ color: "#FF363F" }}>
-                <b>Media</b>
-              </h5>
-            </a>
-          </div>
-        </div>
-        <div className="header-container">
-          <Announcements />
-        </div>*/}
-
       </React.Fragment>
     );
   }
