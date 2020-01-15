@@ -8,6 +8,7 @@
 /*========== Sections ==========*/
 .section {
   margin-top: 30px;
+  border-radius: 20px;
 }
 
 /*---------- Header ----------*/
@@ -18,7 +19,6 @@
   border-radius: 0 0 20px 20px;
   color: black;
   align-content: center;
-  box-shadow: 2px 2px 1px black;
 }
 
 .header a:hover {
@@ -52,6 +52,7 @@
 .timer {
   font-weight: 900;
   /*border: 3px solid #dc3545;*/
+  margin-left: auto;
 }
 
 @media (min-width: 1000px) {
@@ -125,16 +126,27 @@
 
 .media {
   width: 100%;
-  height: 100px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
 }
 
+.media-info {
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+
+  -moz-box-shadow:    inset 0 0 2px #000000;
+  -webkit-box-shadow: inset 0 0 2px #000000;
+  box-shadow:         inset 0 0 2px #000000;
+}
+
 .media-btn-container {
+  display: flex;
   margin-top: 20px;
   padding-left: 16px;
   padding-right: 16px;
+  justify-content: center;
 }
 
 .media-btn {
@@ -148,10 +160,10 @@
   display: inline-block;
 }
 
-.media-info {
+.wifi {
   display: flex;
-  margin: 30px auto;
-  /*justify-content: left;*/
+  margin: 10px auto;
+  justify-content: center;
 }
 
 /*---------- Schedule ----------*/
@@ -184,7 +196,7 @@
 
 .schedule {
   background-color: #fafafa;
-  font-size: 1.28em;
+  font-size: 100%;/*1.28em;*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -197,20 +209,23 @@
 /*---------- Schedule ----------*/
 
 .announcements-list,
-.schedule-list {
+.event-list {
   list-style: none;
   margin: 0;
   padding: 0;
   /* width: 70%; */
   overflow: scroll;
-  max-height: 750px;
+  /*max-height: 750px;*/
   padding: 10px 30px;
   border-radius: 6px;
   background: #e5e5e5;
   box-shadow: 0 0px 32px -15px #fff inset;
+  -moz-box-shadow:    inset 0 0 2px #000000;
+  -webkit-box-shadow: inset 0 0 2px #000000;
+  box-shadow:         inset 0 0 2px #000000;
 }
 /*
-.schedule-list {
+.event-list {
   flex: 2 1 66%;
 }
 
@@ -219,11 +234,11 @@
   padding: 12px;
 }
 */
-.schedule-list li {
+.event-list li {
   margin: 10px auto;
 }
 
-.schedule-header {
+.event-header {
   display: flex;
   justify-content: space-between;
 }/*
@@ -234,7 +249,12 @@
 
 /*---------- Announcements ----------*/
 .announcements {
+  width: 100%;
+  height: 300px;
+}
 
+.announcements-title {
+  text-align: center;
 }
 
 /*---------- Maps ----------*/
@@ -255,7 +275,7 @@
   
 }
 
-/*---------- Animation ----------*/
+/*---------- Effects ----------*/
 .Blink {
   animation: blinker 1.5s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
   padding-bottom: 10px;
@@ -267,6 +287,12 @@
   to {
     opacity: 0;
   }
+}
+
+.inner-shadow {
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
 }
 
 

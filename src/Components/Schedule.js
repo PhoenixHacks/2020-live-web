@@ -13,18 +13,21 @@ export default class Schedule extends React.Component {
   renderTab(tab) {
     return (
       <div className="schedule">
-        <ul className="schedule-list">
+        <ul className="event-list">
           {tab.map((item, index) => (
             <li key={index}>
-              <span className="schedule-header">
-                <span style={{ fontSize: "25px" }}>
+              <span className="row event-header">
+                <span className="event" style={{ fontSize: "25px" }}>
                   <b>{item.event}</b>
                 </span>
-                <span style={{ color: "#8f40bf" }}>
+                {/*TODO: Display time better (include date or day)*/}
+                <span className="time" style={{ color: "#8f40bf" }}>
                   <b>{item.time}</b>
                 </span>
               </span>
-              {item.description}
+              <span className="row description">
+                {item.description}
+              </span>
             </li>
           ))}
         </ul>

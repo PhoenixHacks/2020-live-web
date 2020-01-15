@@ -46,9 +46,9 @@ export default class Header extends React.Component {
     const { isLive } = this.isLive;
     return (
       <React.Fragment>
-        <nav className="row align-items-center justify-content-center">
-          <div className="col">
-            <a className="title row justify-content-center" href="/">
+        <nav className="align-items-center justify-content-center">
+          <div className="col justify-content-start">
+            <a className="title justify-content-center" href="/">
               <img src="https://phoenixhacks.com/img/fireball-phoenix-purple.svg" alt="phoenixhacks logo" className="logo-image"></img>
               <span className="logo-text">
                 <span className="capital">P</span>HOENIX<span className="capital">H</span>ACKS
@@ -56,7 +56,9 @@ export default class Header extends React.Component {
               </span>
             </a>
           </div>
-          {isLive ? <h1 className="timer col">{timer}</h1> : <h1 className="timer col text-danger">{timer}</h1>}
+          <div className="col justify-content-end">
+            {isLive ? <h1 className="timer">{timer}</h1> : <h1 className="timer col text-danger">{timer}</h1>}
+          </div>
         </nav>
       </React.Fragment>
     );

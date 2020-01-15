@@ -1,12 +1,26 @@
-import * as React from 'react'
-import WidgetBot from '@widgetbot/react-embed'
+import * as React from 'react';
+import Discord from 'discord.js';
 
-const Discord = () => (
-  <WidgetBot
-    server="299881420891881473"
-    channel="355719584830980096"
-    shard="https://disweb.dashflo.net"
-  />
-)
-
-export default Discord
+export default class DiscordClient extends React.Component {
+  render() {
+    const BOT_TOKEN='NjY2ODUxNTEzNzI0OTYwNzg5.Xh6VaA.5ZnP-7F6GsXGo-doaO2Tywc4E9w'
+    // Create an instance of a Discord client 
+    const client = new Discord.Client
+    console.log(client);
+    
+    // Create an event listener for messages
+    client.on('message', message => {
+      // If the message is "ping"
+      if (message.content === 'ping') {
+        // Send "pong" to the same channel
+        message.channel.send('pong');
+      }
+    });
+    
+    // Log our bot in using the token from https://discordapp.com/developers/applications/me
+    client.login(BOT_TOKEN);
+    return (
+      <div>TEST</div>
+    );
+  }
+}
