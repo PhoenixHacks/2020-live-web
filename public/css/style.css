@@ -52,7 +52,6 @@
 .timer {
   font-weight: 900;
   /*border: 3px solid #dc3545;*/
-  margin-left: auto;
 }
 
 .perspective-1 {
@@ -71,21 +70,31 @@
 
 .media {
   background-color: #d7d7d7;
+  display: flex;
 }
-/*
-.media .offset-1 {
-  margin-left: 4.1666665% !important;
-}*/
 
 .media-info {
   height: 100%;
-  margin: auto;
-  padding: 10px;
 }
 
 .media-links {
+  display: inline-block;
   padding: 10px;
-  margin-bottom: 4.1666665%;
+  width: 100%;
+}
+
+.media-links div {
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.row-eq-height{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 
@@ -98,6 +107,11 @@
 }
 
 .wifi {
+  height: 100%;
+  padding: 10px 10px 10px 0;
+}
+
+.wifi div {
   padding: 10px;
 }
 
@@ -114,9 +128,17 @@
 }
 
 .radio {
+  height: 100%;
   width: 100%;
-  margin: auto;
-  
+  display: inline-block;
+  padding: 0 10px 10px 10px;
+}
+
+.radio div {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
 }
 
 /*---------- Schedule ----------*/
@@ -206,9 +228,18 @@
 
 /*---------- Announcements ----------*/
 .announcements {
-  height: 300px;
-  padding: 20px;
-  margin: 0;
+  max-height: 300px;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+}
+
+.announcements div {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
 }
 
 .announcements-title {

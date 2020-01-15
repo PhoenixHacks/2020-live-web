@@ -22,17 +22,17 @@ class App extends React.Component {
           </div>
           <div className="perspective-1"></div>
       
-          <div className="content row align-self-center">
+          <div className="content">
             <div className="col align-self-center">
-              <div className="content-section media row justify-content-center">
+              <div className="content-section media">
                 <Media />
               </div>
 
-              <div className="content-section schedule-tabs row">
+              <div className="content-section schedule-tabs">
                 <Schedule />
               </div>
 
-              <div className="content-section row">
+              <div className="content-section">
                 <Maps />
               </div>
             </div>

@@ -37,9 +37,7 @@ export default class Announcements extends React.Component {
     const { announcements } = this.state;
 
     return (
-      <React.Fragment>
-        {/*<Radio />
-        <br />*/}
+      <div className="card">
         <h2 className="announcements-title">
           <b>Announcements</b>
         </h2>
@@ -60,7 +58,7 @@ export default class Announcements extends React.Component {
             <p>No current announcements.</p>
           )}
         </ul>
-      </React.Fragment>
+      </div>
     );
   }
 }
