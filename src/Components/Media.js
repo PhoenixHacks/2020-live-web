@@ -19,8 +19,8 @@ export default class Media extends React.Component {
             </div>
             <div className="wifi card card-body col-6 offset-1 align-items-start">
               <h3 className="wifi-title"><FaWifi size={38}/> WiFi</h3>
-              <h5><strong>SSID: </strong> ????</h5>
-              <h5><strong>Pass:</strong> ????</h5>
+              <h5>Poly_Guest</h5>
+              <h5><strong>Login:</strong> Name & Email</h5>
             </div>
           </div>
           <div className="card card-body align-self-start d-inline-block">

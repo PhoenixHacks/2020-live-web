@@ -64,7 +64,7 @@ export default class Schedule extends React.Component {
                   : (item.tags.includes("warning") ? "table-warning" : "") }>
                 <th scope="row">{item.datetime.start}-{item.datetime.end}</th>
                 <td>{item.event}</td>
-                <td>{item.location}</td>
+                <td style={{textAlign: "center"}}>{item.location}</td>
               </tr>
             ))}
           </tbody>
