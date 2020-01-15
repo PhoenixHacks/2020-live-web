@@ -20,10 +20,11 @@ class App extends React.Component {
           <div className="header row justify-content-center">
             <Header />
           </div>
+          <div className="perspective-1"></div>
       
           <div className="content row align-self-center">
             <div className="col align-self-center">
-              <div className="content-section media row">
+              <div className="content-section media row justify-content-center">
                 <Media />
               </div>
 
