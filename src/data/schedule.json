@@ -2,98 +2,178 @@
     "schedule": [
         {
             "event": "Check-In",
-            "time": "9:00am - 11:00am",
-            "type": "logistics",
+            "datetime": {
+                "start": "09:00am",
+                "end": "11:00am",
+                "day": "25"
+            },
+            "tags": ["logistics"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Opening Ceremony",
-            "time": "11:00am - 12:00am",
-            "type": "logistics",
+            "datetime": {
+                "start": "11:00am",
+                "end": "12:00pm",
+                "day": "25"
+            },
+            "tags": ["logistics"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Hacking Begins",
-            "time": "12:00am",
-            "type": "logistics",
+            "datetime": {
+                "start": "12:00pm",
+                "end": "12:00pm",
+                "day": "25"
+            },
+            "tags": ["logistics", "success"],
+            "location": "--",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            "event": "Lunch - Chick-Fil-A",
-            "time": "1:00pm - 2:00pm",
-            "type": "meal",
+            "event": "Lunch-Chick-Fil-A",
+            "datetime": {
+                "start": "01:00pm",
+                "end": "02:00pm",
+                "day": "25"
+            },
+            "tags": ["meal"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            "event": "Dinner - Dominos",
-            "time": "7:00pm - 8:00pm",
-            "type": "meal",
+            "event": "Dinner-Dominos",
+            "datetime": {
+                "start": "07:00pm",
+                "end": "08:00pm",
+                "day": "25"
+            },
+            "tags": ["meal"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Cup Stacking",
-            "time": "8:00pm - 9:00pm",
-            "type": "activity",
+            "datetime": {
+                "start": "08:00pm",
+                "end": "09:00pm",
+                "day": "25"
+            },
+            "tags": ["activity"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Midnight Snack",
-            "time": "12:00am - 1:00am",
-            "type": "meal",
+            "datetime": {
+                "start": "12:00am",
+                "end": "01:00am",
+                "day": "26"
+            },
+            "tags": ["meal"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Smash Tournament",
-            "time": "1:00am - 2:30am",
-            "type": "activity",
+            "datetime": {
+                "start": "01:00am",
+                "end": "02:30am",
+                "day": "26"
+            },
+            "tags": ["activity"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            "event": "Breakfast - Panera Bread",
-            "time": "8:00am - 9:00am",
-            "type": "meal",
+            "event": "Breakfast-Panera Bread",
+            "datetime": {
+                "start": "08:00am",
+                "end": "09:00am",
+                "day": "26"
+            },
+            "tags": ["meal"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "DevPost Submissions Due",
-            "time": "11:00am - 12:00am",
-            "type": "logistics",
+            "datetime": {
+                "start": "11:00am",
+                "end": "12:00pm",
+                "day": "26"
+            },
+            "tags": ["logistics", "warning"],
+            "location": "--",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Hacking Ends",
-            "time": "12:00pm",
-            "type": "logistics",
+            "datetime": {
+                "start": "12:00pm",
+                "end": "12:00pm",
+                "day": "26"
+            },
+            "tags": ["logistics", "success"],
+            "location": "--",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            "event": "Lunch - Subway",
-            "time": "12:00pm - 1:00pm",
-            "type": "meal",
+            "event": "Lunch-Subway",
+            "datetime": {
+                "start": "12:00pm",
+                "end": "01:00pm",
+                "day": "26"
+            },
+            "tags": ["meal"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Demoing & Judging",
-            "time": "1:00pm - 3:30pm",
-            "type": "logistics",
+            "datetime": {
+                "start": "01:00pm",
+                "end": "03:30pm",
+                "day": "26"
+            },
+            "tags": ["logistics"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Deliberations",
-            "time": "3:30pm - 4:00pm",
-            "type": "logistics",
+            "datetime": {
+                "start": "03:30pm",
+                "end": "04:00pm",
+                "day": "26"
+            },
+            "tags": ["logistics"],
+            "location": "--",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Closing Ceremony",
-            "time": "4:00pm - 5:00pm",
-            "type": "logistics",
+            "datetime": {
+                "start": "04:00pm",
+                "end": "05:00pm",
+                "day": "26"
+            },
+            "tags": ["logistics"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "event": "Workshop Placeholder",
-            "time": "4:00pm - 5:00pm",
-            "type": "workshop",
+            "datetime": {
+                "start": "04:00pm",
+                "end": "05:00pm",
+                "day": "26"
+            },
+            "tags": ["workshop"],
+            "location": "",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         }
     ]

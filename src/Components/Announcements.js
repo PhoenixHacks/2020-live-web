@@ -38,8 +38,8 @@ export default class Announcements extends React.Component {
 
     return (
       <React.Fragment>
-        {/*<Radio />*/}
-        <br />
+        {/*<Radio />
+        <br />*/}
         <h2 className="announcements-title">
           <b>Announcements</b>
         </h2>

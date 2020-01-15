@@ -1,7 +1,7 @@
 This project's history can be summarized as such:
- Originally bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
- Turned into [MangoHack's 2019 Live Site](https://github.com/MangoHacks/mango2019-live).
- Which has since been heavily modified into the current form of the project.
+ - Originally bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ - Turned into [MangoHack's 2019 Live Site](https://github.com/MangoHacks/mango2019-live).
+ - Which has since been heavily modified into the current form of the project.
 
 ## Available Scripts
 
