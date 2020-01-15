@@ -6,7 +6,7 @@ import Schedule from "./Components/Schedule";
 import Announcements from "./Components/Announcements";
 import Radio from "./Components/Radio";
 
-import WidgetBot from '@widgetbot/react-embed';
+import Discord from "./Components/Discord";
 
 class App extends React.Component {
   render() {

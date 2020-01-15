@@ -6,7 +6,7 @@ export default class Schedule extends React.Component {
 
   typeFilter(event_type) {
     return function(element) {
-      return element.type == event_type;
+      return element.type === event_type;
     }
   }
 

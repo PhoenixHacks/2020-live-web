@@ -35,7 +35,7 @@ export default class Header extends React.Component {
 
       let timer = f_days + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
       this.setState({ timer });
-      if (days < 1 && timer != "00:00:00:00") {
+      if (days < 1 && timer !== "00:00:00:00") {
         this.isLive = true;
       }
     }, 1000);
