@@ -1,13 +1,12 @@
 import React from "react";
 
 import Maps from "./Components/Maps";
-import Meals from "./Components/Meals";
 import Header from "./Components/Header";
 import Schedule from "./Components/Schedule";
 import Announcements from "./Components/Announcements";
 import Radio from "./Components/Radio";
 
-import { ResBlobTop, ResBlobBottom } from "./Components/Shared/Blobs";
+import WidgetBot from '@widgetbot/react-embed';
 
 class App extends React.Component {
   render() {
@@ -28,6 +27,9 @@ class App extends React.Component {
                 <a href="https://phoenixhacks2020.devpost.com" target="_blank" rel="noopener noreferrer">
                   <button className="btn media-btn">Devpost</button>
                 </a>
+                <a href="https://phoenixhacks.com/media" target="_blank" rel="noopener noreferrer">
+                  <button className="btn media-btn">Media</button>
+                </a>
               </div>
 
               <div className="media-info col">
@@ -37,11 +39,7 @@ class App extends React.Component {
                   href="https://phoenixhacks.com/photos"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  <h5 style={{ color: "#FF363F" }}>
-                    <b>Media</b>
-                  </h5>
-                </a>
+                ></a>
               </div>
 
               <div className="col">

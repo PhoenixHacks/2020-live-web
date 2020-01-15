@@ -37,6 +37,7 @@ export default class Announcements extends React.Component {
     const { announcements } = this.state;
 
     return (
+      
       <div
         className="announcements"
         style={{
