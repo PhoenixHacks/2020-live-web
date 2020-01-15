@@ -1,12 +1,15 @@
 import * as React from 'react';
 import Discord from 'discord.js';
 
-export default class DiscordClient extends React.Component {
+var auth = require('./auth.json');
+
+export default class DiscordBot extends React.Component {
   render() {
-    const BOT_TOKEN='NjY2ODUxNTEzNzI0OTYwNzg5.Xh6VaA.5ZnP-7F6GsXGo-doaO2Tywc4E9w'
     // Create an instance of a Discord client 
-    const client = new Discord.Client
-    console.log(client);
+    var bot = new Discord.Client({
+      token: auth.token,
+      autorun: true
+    });
     
     // Create an event listener for messages
     client.on('message', message => {
@@ -18,7 +21,7 @@ export default class DiscordClient extends React.Component {
     });
     
     // Log our bot in using the token from https://discordapp.com/developers/applications/me
-    client.login(BOT_TOKEN);
+    client.login(auth.token);
     return (
       <div>TEST</div>
     );
