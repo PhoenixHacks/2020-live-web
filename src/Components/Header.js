@@ -10,10 +10,11 @@ export default class Header extends React.Component {
 
   countdown = () => {
     let countDownDate = new Date("Jan 26, 2020 12:00:00").getTime();
-    /*let countDownDate = new Date("Jan 15, 2020 12:00:00").getTime();*/
+    //let countDownDate = new Date("Jan 16, 2020 12:00:00").getTime();
 
     return setInterval(() => {
       let now = new Date().getTime();
+      let isLive = false;
 
       let distance = countDownDate - now;
 
@@ -34,33 +35,34 @@ export default class Header extends React.Component {
       let f_seconds = ("0" + seconds).slice(-2);
 
       let timer = f_days + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
-      this.setState({ timer });
-      if (days < 1 && timer !== "00:00:00:00") {
-        this.isLive = true;
+      console.log(days)
+      if (days === 0 && timer !== "00:00:00:00") {
+        isLive = true;
       }
+      this.setState({now, timer, isLive});
     }, 1000);
   };
 
   render() {
-    const { timer } = this.state;
-    const { isLive } = this.isLive;
+    const { now, timer, isLive } = this.state;
+
     return (
-      <React.Fragment>
-        <nav className="">
-          <div className="col">
+      <div className="header row justify-content-center">
+        <nav>
+          <div>
             <a className="title" href="/">
               <img src="https://phoenixhacks.com/img/fireball-phoenix-purple.svg" alt="phoenixhacks logo" className="logo-image"></img>
               <span className="logo-text">
                 <span className="capital">P</span>HOENIX<span className="capital">H</span>ACKS
-                <span className="live text-danger">LIVE</span>
+                {isLive ? <span className="live">LIVE</span> : <span className="live text-danger">LIVE</span>}
               </span>
             </a>
           </div>
-          <div className="col">
-            {isLive ? <h1 className="timer">{timer}</h1> : <h1 className="timer col text-danger">{timer}</h1>}
+          <div>
+            {isLive ? <h1 className="timer text-success">{timer}</h1> : <h1 className="timer text-danger">{timer}</h1>}
           </div>
         </nav>
-      </React.Fragment>
+      </div>
     );
   }
 }

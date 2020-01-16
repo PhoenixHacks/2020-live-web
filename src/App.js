@@ -15,19 +15,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="container">
-          <div className="header row justify-content-center">
-            <Header />
-          </div>
-      
-          <div className="content">
-            <Media />
-            <Schedule />
-            <Maps />
-          </div>
+      <div className="container">
+        <Header />
+    
+        <div className="content">
+          <Media />
+          <Schedule />
+          <Maps />
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
