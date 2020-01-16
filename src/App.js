@@ -4,12 +4,6 @@ import Maps from "./Components/Maps";
 import Header from "./Components/Header";
 import Schedule from "./Components/Schedule";
 import Media from "./Components/Media";
-import Announcements from "./Components/Announcements";
-import Radio from "./Components/Radio";
-
-import DiscordBot from "./Components/DiscordBot";
-//import DiscordClient from "./Components/Discord";
-import Discord from 'discord.js';
 
 class App extends React.Component {
 
@@ -19,8 +13,11 @@ class App extends React.Component {
         <Header />
     
         <div className="content">
+          <div className="transition t-down"></div>
           <Media />
+          <div className="transition t-up"></div>
           <Schedule />
+          <div className="transition t-down"></div>
           <Maps />
         </div>
       </div>

@@ -12,18 +12,20 @@ export default class Media extends React.Component {
           <div className="row">
             <div className="media-links col-5">
               <div className="card">
-                <a href="https://phoenixhacks.com/discord" className="link" target="_blank" rel="noopener noreferrer">
-                  <span><FaDiscord size={23}/> Discord</span></a><br/>
-                <a href="https://phoenixhacks2020.devpost.com" className="link" target="_blank" rel="noopener noreferrer">
-                  {/*<span><FaUpload size={23}/> DevPost</span></a><br/>*/}
-                  <span><img style={{height: "23px", marginRight: "-3px"}} src={require("../images/devpost-icon3.png")}/> DevPost</span></a><br/>
-                <a href="https://phoenixhacks.com/media" className="link" target="_blank" rel="noopener noreferrer">
-                  <span><FaImages size={23}/> Media</span></a>
+                <h5><FaDiscord size={23}/>
+                  <a href="https://phoenixhacks.com/discord" className="" target="_blank" rel="noopener noreferrer">
+                  Discord</a></h5>
+                <h5><img style={{height: "23px", marginRight: "-3px"}} src={require("../images/devpost-icon3.png")}/>
+                  <a href="https://phoenixhacks2020.devpost.com" className="" target="_blank" rel="noopener noreferrer">
+                  DevPost</a></h5>
+                <h5><FaImages size={23}/>
+                  <a href="https://phoenixhacks.com/media" className="" target="_blank" rel="noopener noreferrer">
+                  Media</a></h5>
               </div>
             </div>
 
             <div className="wifi col-7">
-              <div className="card">
+              <div className="card justify-content-center">
                 <h3 className="wifi-title"><FaWifi size={38}/> WiFi</h3>
                 <h5>Poly_Guest</h5>
                 <h5><strong>Login:</strong> Name & Email</h5>

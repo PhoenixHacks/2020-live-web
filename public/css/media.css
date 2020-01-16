@@ -18,9 +18,20 @@
       font-size: 64px;
     }
 
-    .content {
+    .transition {
       border: 50px solid transparent;
-      border-top-color: #cecece;
+    }
+
+    .t-down {
+      margin-bottom: -50px;
+    }
+    
+    .t-up {
+      margin-top: -50px;
+    }
+
+    .media, .maps {
+      margin: 0 50px 0 50px;
     }
 }
 
@@ -43,25 +54,58 @@
       font-size: 48px;
     }
 
-    .content {
+    .transition {
       border: 40px solid transparent;
-      border-top-color: #cecece;
+    }
+
+    .t-down {
+      margin-bottom: -40px;
+    }
+    
+    .t-up {
+      margin-top: -40px;
+    }
+
+    .media, .maps {
+      margin: 0 40px 0 40px;
     }
   }
   
   /*---------- Medium (md) ----------*/
   @media (max-width: 992px) {
-    .content {
+    .transition {
       border: 30px solid transparent;
-      border-top-color: #cecece;
+    }
+
+    .t-down {
+      margin-bottom: -30px;
+    }
+    
+    .t-up {
+      margin-top: -30px;
+    }
+
+    .media, .maps {
+      margin: 0 30px 0 30px;
     }
   }
   
   /*---------- Small (sm) ----------*/
   @media (max-width: 768px) {
-    .content {
+    .transition {
       border: 25px solid transparent;
-      border-top-color: #cecece;
+    }
+
+    .t-down {
+      margin-bottom: -25px;
+    }
+    
+    .t-up {
+      margin-top: -25px;
+    }
+
+    .media, .maps {
+      margin: 0 25px 0 25px;
     }
   }
   
@@ -82,12 +126,6 @@
     .timer {
       height: 36px;
       font-size: 36px;
-    }
-
-    .perspective-1 {
-      margin-top: -6px;
-      margin-bottom: -8px;
-      transform: perspective(300px) rotateX(-41deg);
     }
   }
 

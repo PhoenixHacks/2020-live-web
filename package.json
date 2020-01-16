@@ -5,6 +5,8 @@
   "dependencies": {
     "@widgetbot/react-embed": "^1.2.1",
     "axios": "^0.18.0",
+    "bufferutil": "^4.0.1",
+    "discord.io": "^2.5.3",
     "discord.js": "^11.5.1",
     "react": "^16.7.0",
     "react-bootstrap": "^1.0.0-beta.16",
@@ -12,7 +14,8 @@
     "react-icons": "^3.8.0",
     "react-scripts": "^3.3.0",
     "serialize-javascript": "2.1.1",
-    "socket.io-client": "^2.2.0"
+    "socket.io-client": "^2.2.0",
+    "utf-8-validate": "^5.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,5 +31,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "."
 }

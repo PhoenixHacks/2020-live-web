@@ -3,7 +3,8 @@ import openSocket from "socket.io-client";
 
 import config from "../services/config";
 import announcements from "../services/announcements";
-import Radio from "../Components/Radio";
+import Discordio from './DiscordBot/Discordio'
+import Discordjs from './DiscordBot/Discordjs'
 
 const socket = openSocket(config.API_URL);
 
@@ -42,7 +43,9 @@ export default class Announcements extends React.Component {
           <b>Announcements</b>
         </h2>
         <ul className="announcements-list">
-          {announcements.length > 0 ? (
+          {/*<Discordjs />*/}
+          <Discordio />
+          {/*announcements.length > 0 ? (
             announcements.map(announcement => (
               <li>
                 <span style={{ fontSize: "20px" }}>
@@ -56,7 +59,7 @@ export default class Announcements extends React.Component {
             ))
           ) : (
             <p>No current announcements.</p>
-          )}
+          )*/}
         </ul>
       </div>
     );

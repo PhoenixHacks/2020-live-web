@@ -5,45 +5,15 @@ import Tab from 'react-bootstrap/Tab'
 export default class Schedule extends React.Component {
 
   tagFilter(event_tag) {
-    return function(element) {
-      return element.tags.includes(event_tag);
+    return function(event) {
+      return event.tags.includes(event_tag);
     }
   }
 
   dayFilter(event_day) {
-    return function(element) {
-      return element.datetime.day === event_day;
+    return function(event) {
+      return event.datetime.day === event_day;
     }
-  }
-
-  renderTab(tab) {
-    return (
-      <div className="schedule">
-        <ul className="event-list">
-          {tab.map((item, index) => (
-            <li key={index}>
-              <span className="row event-header">
-                <span className="event" style={{ fontSize: "25px" }}>
-                  <b>{item.event}</b>
-                </span>
-
-                {/*TODO: 
-                    - Display time better: include date or day and fix formatting issues
-                    - Gray out or remove events that have already passed
-                    - Make current events distinct (color and/or blinking effect)
-                */}
-                <span className="time" style={{ color: "#8f40bf" }}>
-                  <b>{item.time}</b>
-                </span>
-              </span>
-              <span className="row description">
-                {item.description}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
   }
 
   tableSection(daytext, day, tab) {
@@ -52,19 +22,19 @@ export default class Schedule extends React.Component {
         <h3 class="head-space">{daytext}</h3>
         <table class="table table-hover">
           <thead>
-            <tr>
-              <th scope="col">Time</th>
-              <th scope="col">Event/Activity</th>
-              <th scope="col">Location</th>
+            <tr className="align-items-center">
+              <th scope="col" style={{width: "33.3333%"}}>Time</th>
+              <th scope="col" style={{width: "33.3333%"}}>Event/Activity</th>
+              <th scope="col" style={{width: "33.3333%"}}>Location</th>
             </tr>
           </thead>
           <tbody>
             {tab.filter(this.dayFilter(day)).map((item, index) => (
               <tr className={ item.tags.includes("success") ? "table-success" 
-                  : (item.tags.includes("warning") ? "table-warning" : "") }>
+                  : (item.tags.includes("warning") ? "table-warning" : "") + " align-items-center"}>
                 <th scope="row">{item.datetime.start}-{item.datetime.end}</th>
                 <td>{item.event}</td>
-                <td style={{textAlign: "center"}}>{item.location}</td>
+                <td>{item.location}</td>
               </tr>
             ))}
           </tbody>
@@ -75,22 +45,33 @@ export default class Schedule extends React.Component {
 
   renderTab2(tab) {
     return (
-      <div class="card-body event-list row" id="schedule">
-        <div className="col">
-          {this.tableSection("Saturday, Janurary 25", "25", tab)}
-        </div>
-        <div className="col">
-          {this.tableSection("Sunday, Janurary 26", "26", tab)}
-        </div>
-        {/* 
-        <tr class="table-warning">
-          <th scope="row">12:00pm</th>
-          <td><i class="fas fa-exclamation-circle"></i> Devpost Submissions Due</td>
-          <td>--</td>
-        </tr> 
-        */}
+      <div class="card-body event-list" id="schedule">
+        {this.tableSection("Saturday, January 25", "25", tab)}
+        {this.tableSection("Sunday, January 26", "26", tab)}
       </div>
     );
+  }
+
+  removeMeridiem(time) {
+    time = time.split("am").pop();
+    time = time.split("pm").pop();
+    return time;
+  }
+
+  eventActive(event, now) {
+    const { start, end, day } = event.datetime
+
+    start = this.removeMeridiem(start)
+    end = this.removeMeridiem(end)
+
+    var eventStart = new Date("Jan " + day + ", 2020 " + start + ":00").getTime();
+    var eventEnd = new Date("Jan " + day + ", 2020 " + end + ":00").getTime();
+
+    if (now > eventStart && now < eventEnd) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   render() {
