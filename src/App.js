@@ -20,22 +20,11 @@ class App extends React.Component {
           <div className="header row justify-content-center">
             <Header />
           </div>
-          <div className="perspective-1"></div>
       
           <div className="content">
-            <div className="col align-self-center">
-              <div className="content-section media">
-                <Media />
-              </div>
-
-              <div className="content-section schedule-tabs">
-                <Schedule />
-              </div>
-
-              <div className="content-section">
-                <Maps />
-              </div>
-            </div>
+            <Media />
+            <Schedule />
+            <Maps />
           </div>
         </div>
       </React.Fragment>

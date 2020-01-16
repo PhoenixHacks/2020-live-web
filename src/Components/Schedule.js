@@ -102,23 +102,25 @@ export default class Schedule extends React.Component {
     const activities = schedule.filter(this.tagFilter("activity"));
 
     return (
-      <Tabs defaultActiveKey="all-events" id="uncontrolled-tab-example">
-        <Tab eventKey="all-events" title="All Events">
-          {this.renderTab2(schedule)}
-        </Tab>
-        <Tab eventKey="logistics" title="Logistics">
-          {this.renderTab2(logistics)}
-        </Tab>
-        <Tab eventKey="meals" title="Meals">
-          {this.renderTab2(meals)}
-        </Tab>
-        <Tab eventKey="workshops" title="Workshops">
-          {this.renderTab2(workshops)}
-        </Tab>
-        <Tab eventKey="activities" title="Activities">
-          {this.renderTab2(activities)}
-        </Tab>
-      </Tabs>
+      <div className="schedule-tabs">
+        <Tabs defaultActiveKey="all-events" id="uncontrolled-tab-example">
+          <Tab eventKey="all-events" title="All Events">
+            {this.renderTab2(schedule)}
+          </Tab>
+          <Tab eventKey="logistics" title="Logistics">
+            {this.renderTab2(logistics)}
+          </Tab>
+          <Tab eventKey="meals" title="Meals">
+            {this.renderTab2(meals)}
+          </Tab>
+          <Tab eventKey="workshops" title="Workshops">
+            {this.renderTab2(workshops)}
+          </Tab>
+          <Tab eventKey="activities" title="Activities">
+            {this.renderTab2(activities)}
+          </Tab>
+        </Tabs>
+      </div>
     );
   }
 }

@@ -6,7 +6,7 @@ import { FaWifi, FaDiscord, FaUpload, FaImages } from 'react-icons/fa';
 export default class Media extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="media">
         <div className="media-info col-6">
 
           <div className="row">
@@ -15,7 +15,8 @@ export default class Media extends React.Component {
                 <a href="https://phoenixhacks.com/discord" className="link" target="_blank" rel="noopener noreferrer">
                   <span><FaDiscord size={23}/> Discord</span></a><br/>
                 <a href="https://phoenixhacks2020.devpost.com" className="link" target="_blank" rel="noopener noreferrer">
-                  <span><FaUpload size={23}/> DevPost</span></a><br/>
+                  {/*<span><FaUpload size={23}/> DevPost</span></a><br/>*/}
+                  <span><img style={{height: "23px", marginRight: "-3px"}} src={require("../images/devpost-icon3.png")}/> DevPost</span></a><br/>
                 <a href="https://phoenixhacks.com/media" className="link" target="_blank" rel="noopener noreferrer">
                   <span><FaImages size={23}/> Media</span></a>
               </div>
@@ -38,7 +39,7 @@ export default class Media extends React.Component {
         <div className="announcements col-6">
           <Announcements />
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
