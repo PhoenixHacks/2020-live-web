@@ -5,7 +5,7 @@ const ai = axios.create({ baseURL: config.API_URL });
 
 async function read() {
   try {
-    const { data } = await ai.get("/announcement");
+    const { data } = await ai.get("/announcements");
 
     return data.data.reverse();
   } catch (e) {
