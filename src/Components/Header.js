@@ -60,6 +60,7 @@ export default class Header extends React.Component {
           </div>
           <div>
             {isLive ? <h1 className="timer text-success">{timer}</h1> : <h1 className="timer text-danger">{timer}</h1>}
+            {isLive ? <span>hackathon in progress</span> : <span>hackathon not started</span>}
           </div>
         </nav>
       </div>
