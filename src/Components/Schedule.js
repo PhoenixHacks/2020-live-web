@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
@@ -19,8 +19,8 @@ export default class Schedule extends React.Component {
   tableSection(daytext, day, tab) {
     return (
       <React.Fragment>
-        <h3 class="head-space">{daytext}</h3>
-        <table class="table table-hover">
+        <h3 className="head-space">{daytext}</h3>
+        <table className="table table-hover">
           <thead>
             <tr className="align-items-center">
               <th scope="col" style={{width: "33.3333%"}}>Time</th>
@@ -31,7 +31,8 @@ export default class Schedule extends React.Component {
           <tbody>
             {tab.filter(this.dayFilter(day)).map((item, index) => (
               <tr className={ item.tags.includes("success") ? "table-success" 
-                  : (item.tags.includes("warning") ? "table-warning" : "") + " align-items-center"}>
+                  : (item.tags.includes("warning") ? "table-warning" : "")
+                  + " align-items-center"} key={item.event}>
                 <th scope="row">{item.datetime.start}-{item.datetime.end}</th>
                 <td>{item.event}</td>
                 <td>{item.location}</td>
@@ -45,7 +46,7 @@ export default class Schedule extends React.Component {
 
   renderTab2(tab) {
     return (
-      <div class="card-body event-list" id="schedule">
+      <div className="card-body event-list" id="schedule">
         {this.tableSection("Saturday, January 25", "25", tab)}
         {this.tableSection("Sunday, January 26", "26", tab)}
       </div>
@@ -59,7 +60,7 @@ export default class Schedule extends React.Component {
   }
 
   eventActive(event, now) {
-    const { start, end, day } = event.datetime
+    let { start, end, day } = event.datetime
 
     start = this.removeMeridiem(start)
     end = this.removeMeridiem(end)

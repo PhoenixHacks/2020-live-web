@@ -3,8 +3,6 @@ import client from "socket.io-client";
 
 import config from "../services/config";
 import announcements from "../services/announcements";
-import Radio from "../Components/Radio";
-
 
 const socket = client.connect(config.API_URL, { path: '/announcements' });
 

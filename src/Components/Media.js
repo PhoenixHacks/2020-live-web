@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Radio from "./Radio";
 import Announcements from "./Announcements";
-import { FaWifi, FaDiscord, FaUpload, FaImages } from 'react-icons/fa';
+import { FaDiscord, FaImages } from 'react-icons/fa';
 
 const MediaLinks = () => {
   return (
@@ -10,7 +10,7 @@ const MediaLinks = () => {
         <h5><FaDiscord/>
           <a href="https://phoenixhacks.com/discord" className="" target="_blank" rel="noopener noreferrer">
           Discord</a></h5>
-        <h5><img style={{marginRight: "-3px"}} src={require("../images/devpost-icon3.png")}/>
+        <h5><img style={{marginRight: "-3px"}} src={require("../images/devpost-icon3.png")} alt=""/>
           <a href="https://phoenixhacks2020.devpost.com" className="" target="_blank" rel="noopener noreferrer">
           DevPost</a></h5>
         <h5><FaImages/>
@@ -31,7 +31,7 @@ const Wifi = () => {
   return (
     <div className="wifi col-5">
       <div className="card justify-content-center">
-        <h3 className="wifi-title"><i class="fa fa-wifi"></i> WiFi</h3>
+        <h3 className="wifi-title"><i className="fa fa-wifi"></i> WiFi</h3>
         <h5>Poly_Guest</h5>
         <h5>Login Page</h5>
       </div>

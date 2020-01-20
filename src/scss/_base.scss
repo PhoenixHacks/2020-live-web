@@ -16,10 +16,19 @@ $palette: (
   text-normal: #dcddde,
   text-muted: #72767d
 );
+$screen-sizes: (
+  xxs: 320px,
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
 
 body {
   font: 100% $font-stack;
   background: map-get($palette, background-tertiary);
+  color: map-get($palette, text-normal);
 }
 
 /*

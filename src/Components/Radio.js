@@ -6,7 +6,7 @@ export default class Radio extends React.Component {
       <div className="radio">
         <div className="card">
           <div className="col">
-              <i class="fa fa-circle text-danger Blink"></i>&nbsp; LIVE
+              <i className="fa fa-circle text-danger Blink"></i>&nbsp; LIVE
           </div>
           <div className="col">
             {/*<audio id="audio_player" src="http://68.183.126.181:8000/stream" type="audio/mpeg" controls/>*/}

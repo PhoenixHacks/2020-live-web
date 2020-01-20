@@ -9,14 +9,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <Header />
-    
-        <div className="content">
-          <Media />
-          <div className="spacer"/>
-          <Schedule />
-          <Maps />
+        <div className="container">
+          <div className="content">
+            <Media />
+            <div className="spacer"/>
+            <Schedule />
+            <Maps />
+          </div>
         </div>
       </div>
     );

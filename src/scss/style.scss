@@ -1,8 +1,33 @@
 // style.scss
-@use 'base';
+@import 'base';
+
 
 #header {
   width: 100%;
+  text-align: center;
+  background-color: map-get($palette, background-secondary);
+  color: map-get($palette, text-normal);
+
+  a {
+    $size: 64px;
+    height: $size;
+    font-size: $size;
+    text-decoration: none;
+    color: inherit;
+
+    img {
+      height: inherit;
+      vertical-align: middle;
+    }
+
+    .logo-text {
+      font-family: 'PhoenixHacks', sans-serif;
+
+      .live {
+        font: $font-stack;
+      }
+    }
+  }
 }
 
 #timer {
