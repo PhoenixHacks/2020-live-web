@@ -74,8 +74,10 @@ export default class Announcements extends React.Component {
   render() {
     const { announcements } = this.state;
 
+    // fix issue with message being sent multiple times
+    // fix issue with content disappearing (timeout?)
     return (
-      <div className="">
+      <div id="announcements">
         <h2 className="announcements-title">
           <b>ANNOUNCEMENTS</b>
         </h2>

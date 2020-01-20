@@ -17,6 +17,10 @@ export default class Schedule extends React.Component {
   }
 
   tableSection(daytext, day, tab) {
+    // Add functionality to:
+    // - gray out past events
+    // - indicate which events are currently active
+    
     return (
       <React.Fragment>
         <h3 className="head-space">{daytext}</h3>
@@ -46,7 +50,7 @@ export default class Schedule extends React.Component {
 
   renderTab2(tab) {
     return (
-      <div className="card-body event-list" id="schedule">
+      <div className="card-body event-list">
         {this.tableSection("Saturday, January 25", "25", tab)}
         {this.tableSection("Sunday, January 26", "26", tab)}
       </div>
@@ -84,7 +88,7 @@ export default class Schedule extends React.Component {
     const activities = schedule.filter(this.tagFilter("activity"));
 
     return (
-      <div className="schedule-tabs">
+      <div className="schedule-tabs" id="schedule">
         <Tabs defaultActiveKey="all-events" id="uncontrolled-tab-example">
           <Tab eventKey="all-events" title="All Events">
             {this.renderTab2(schedule)}

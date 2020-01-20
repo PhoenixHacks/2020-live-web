@@ -1,15 +1,21 @@
 // style.scss
 @import 'base';
+@import 'effects';
 @import '~rfs/scss';
 
 .text-danger {
   color: #d32f2f !important;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #header {
   width: 100%;
   text-align: center;
-  background-color: map-get($palette, background-primary);
+  background-color: map-get($palette, background-quaternary);
   color: map-get($palette, text-normal);
   //box-shadow: 0 0 1px rgba(0,0,0,0.12), 0 0 1px rgba(0,0,0,0.24);
 
@@ -17,8 +23,6 @@
     $size: 64px; 
     height: $size;
     font-size: $size;
-    text-decoration: none;
-    color: inherit;
 
     img {
       // figure out responsive image height just like rfs for font-size
@@ -50,25 +54,93 @@
 #content {
   display: grid;
   grid-gap: 40px;
-  background: map-get($palette, background-secondary);
   padding: 40px;
+  background: map-get($palette, background-secondary);
 
   // drop shadow illusion for header
   box-shadow: inset 0 1px 2px -1px rgba(0,0,0,0.4);
 
   #media {
+    display: grid;
+    grid-gap: 20px;
+    //padding: 20px;
+    //background: map-get($palette, background-tertiary);
 
+    #info {
+      grid-column: 1;
+      display: grid;
+      grid-gap: 10px;
+      padding: 10px;
+      background: map-get($palette, background-primary);
+      border-radius: 6px;
+
+      #links {
+        grid-area: 1 / 1;
+      }
+      #wifi {
+        grid-area: 1 / 2;
+        height: 100%;
+      }
+      #radio {
+        grid-area: 2 / span 2;
+        
+        audio {
+          width: 100%;
+        }
+      }
+    }
 
     #announcements {
+      $height: 100%;
+      grid-column: 2;
+      display: grid;
+      padding: 10px;
+      background: map-get($palette, background-primary);
+      border-radius: 6px;
+      height: $height;
 
+      h2 {
+        grid-row: 1;
+        text-align: center;
+        border-radius: 6px 6px 0 0;
+        align-self: center;
+        //height: (1/5) * 100%;
+      }
+      ul {
+        grid-row: 2 / 10;
+        padding: 10px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-radius: 0 0 6px 6px;
+        background: map-get($palette, background-tertiary);
+        //height: (4/5) * 100%;
+
+        box-shadow: 0 0px 32px -15px #fff inset;
+        -moz-box-shadow:    inset 0 0 2px #000000;
+        -webkit-box-shadow: inset 0 0 2px #000000;
+        box-shadow:         inset 0 0 2px #000000;
+      }
     }
   }
 
   #schedule {
+    padding: 10px;
+    background: map-get($palette, background-primary);
+    border-radius: 6px;
 
+    table {
+      color: map-get($palette, text-normal);
+    }
   }
 
   #maps {
+    padding: 30px;
+    background: map-get($palette, background-primary);
+    border-radius: 6px;
+    align-items: center;
 
+    .map {
+      width: 100%;
+    }
   }
 }

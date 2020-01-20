@@ -1,63 +1,51 @@
 import React from "react";
-import Radio from "./Radio";
+//import Radio from "./Radio";
 import Announcements from "./Announcements";
 import { FaDiscord, FaUpload, FaImages } from 'react-icons/fa';
 
-const MediaLinks = () => {
-  return (
-    <div className="media-links col-7">
-      <div className="card d-flex justify-content-center" style={{height: "130px"}}>
-        <h5><FaDiscord/>
-          <a href="https://phoenixhacks.com/discord" className="" target="_blank" rel="noopener noreferrer">
-          Discord</a></h5>
-        <h5><FaUpload/>{/*<img style={{marginRight: "-3px"}} src={require("../images/devpost-icon3.png")} alt=""/>*/}
-          <a href="https://phoenixhacks2020.devpost.com" className="" target="_blank" rel="noopener noreferrer">
-          DevPost</a></h5>
-        <h5><FaImages/>
-          <a href="https://phoenixhacks.com/media" className="" target="_blank" rel="noopener noreferrer">
-          Media</a></h5>
-        {/*
-        <div className="col">
-          <h5 className="row"><i class="fa fa-question-circle" aria-hidden="true"></i>
-            <a href="https://phoenixhacks.com#FAQ" className="" target="_blank" rel="noopener noreferrer">
-            FAQ</a></h5>
-        </div>*/}
-      </div>
-    </div>
-  )
-}
+const Link = ({text, icon, link}) => (
+  <h5>{icon}&nbsp;
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      {text}
+    </a>
+  </h5>
+)
 
-const Wifi = () => {
-  return (
-    <div className="wifi col-5">
-      <div className="card justify-content-center">
-        <h3 className="wifi-title"><i className="fa fa-wifi"></i> WiFi</h3>
-        <h5>Poly_Guest</h5>
-        <h5>Login Page</h5>
-      </div>
-    </div>
-  )
-}
+const Links = () => (
+  <div id="links">
+    <Link text={"Discord"} icon={<FaDiscord/>} link={"https://phoenixhacks.com/discord"}/>
+    <Link text={"DevPost"} icon={<FaUpload/>} link={"https://phoenixhacks2020.devpost.com"}/>
+    <Link text={"Media"} icon={<FaImages/>} link={"https://phoenixhacks.com/media"}/>
+    <Link text={"FAQ"} icon={<i class="fa fa-question-circle" aria-hidden="true"></i>} 
+      link={"https://phoenixhacks.com#FAQ"}/>
+  </div>
+)
+
+const Wifi = () => (
+  <div id="wifi">
+    <h3 className="wifi-title"><i className="fa fa-wifi"></i> WiFi</h3>
+    <h5>Poly_Guest</h5>
+    <h5>Login Page</h5>
+  </div>
+)
+
+const Radio = () => (
+  <div id="radio">
+    {/*<span><i className="fa fa-circle text-danger Blink"></i>&nbsp; LIVE</span>*/}
+    <audio src="https://demo.azuracast.com/radio/8000/radio.mp3?1579048568" type="audio/mpeg" controls/>
+  </div>
+)
 
 export default class Media extends React.Component {
   render() {
     return (
-      <div className="media row">
-        <div className="media-info col-lg-6">
-
-          <div className="row">
-            <MediaLinks />
-            <Wifi />
-          </div>
-          
-          <div className="row">
-            <Radio />
-          </div>
+      <div id="media">
+        <div id="info">
+          <Links />
+          <Wifi />
+          <Radio />
         </div>
-        
-        <div className="announcements col-lg-6">
-          <Announcements />
-        </div>
+        <Announcements />
       </div>
     );
   }
