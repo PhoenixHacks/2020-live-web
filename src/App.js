@@ -11,13 +11,10 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <div className="container">
-          <div className="content">
-            <Media />
-            <div className="spacer"/>
-            <Schedule />
-            <Maps />
-          </div>
+        <div className="container" id="content">
+          <Media />
+          <Schedule />
+          <Maps />
         </div>
       </div>
     );

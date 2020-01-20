@@ -13,8 +13,8 @@ export default class Header extends React.Component {
     const isLive = this.headerCallback.isLive;
 
     return (
-      <div className="" id="header">
-        <a className="title" href="/">
+      <div id="header">
+        <a href="/">
           <img src="https://phoenixhacks.com/img/fireball-phoenix-purple.svg" alt="phoenixhacks logo"></img>
           <span className="logo-text">
             <span className="capital">P</span>HOENIX<span className="capital">H</span>ACKS
