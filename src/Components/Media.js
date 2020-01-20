@@ -1,7 +1,7 @@
 import React from "react";
 import Radio from "./Radio";
 import Announcements from "./Announcements";
-import { FaDiscord, FaImages } from 'react-icons/fa';
+import { FaDiscord, FaUpload, FaImages } from 'react-icons/fa';
 
 const MediaLinks = () => {
   return (
@@ -10,7 +10,7 @@ const MediaLinks = () => {
         <h5><FaDiscord/>
           <a href="https://phoenixhacks.com/discord" className="" target="_blank" rel="noopener noreferrer">
           Discord</a></h5>
-        <h5><img style={{marginRight: "-3px"}} src={require("../images/devpost-icon3.png")} alt=""/>
+        <h5><FaUpload/>{/*<img style={{marginRight: "-3px"}} src={require("../images/devpost-icon3.png")} alt=""/>*/}
           <a href="https://phoenixhacks2020.devpost.com" className="" target="_blank" rel="noopener noreferrer">
           DevPost</a></h5>
         <h5><FaImages/>
