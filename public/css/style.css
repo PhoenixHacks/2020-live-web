@@ -245,6 +245,10 @@
   display: table-row-group;
 }
 
+.row {
+  margin: 0 !important;
+}
+
 .announcements-list,
 .event-list {
   list-style: none;

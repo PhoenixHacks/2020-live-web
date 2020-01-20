@@ -10,6 +10,7 @@
     "bufferutil": "^4.0.1",
     "discord.io": "^2.5.3",
     "discord.js": "^11.5.1",
+    "node-sass": "^4.13.1",
     "react": "^16.7.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-custom-scrollbars": "^4.2.1",
