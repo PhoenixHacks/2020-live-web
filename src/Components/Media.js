@@ -10,7 +10,7 @@ const MediaLinks = () => {
         <h5><FaDiscord/>
           <a href="https://phoenixhacks.com/discord" className="" target="_blank" rel="noopener noreferrer">
           Discord</a></h5>
-        <h5><img style={{height: "23px", marginRight: "-3px"}} src={require("../images/devpost-icon3.png")}/>
+        <h5><img style={{marginRight: "-3px"}} src={require("../images/devpost-icon3.png")}/>
           <a href="https://phoenixhacks2020.devpost.com" className="" target="_blank" rel="noopener noreferrer">
           DevPost</a></h5>
         <h5><FaImages/>

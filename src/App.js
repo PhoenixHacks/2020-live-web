@@ -13,11 +13,9 @@ class App extends React.Component {
         <Header />
     
         <div className="content">
-          <div className="transition t-down"></div>
           <Media />
-          <div className="transition t-up"></div>
+          <div className="spacer"/>
           <Schedule />
-          <div className="transition t-down"></div>
           <Maps />
         </div>
       </div>

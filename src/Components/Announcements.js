@@ -5,6 +5,7 @@ import config from "../services/config";
 import announcements from "../services/announcements";
 import Radio from "../Components/Radio";
 
+
 const socket = client.connect(config.API_URL, { path: '/announcements' });
 
 export default class Announcements extends React.Component {
