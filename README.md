@@ -9,6 +9,10 @@ This project's history can be summarized as such:
 
 In the project directory, you can run:
 
+### [`yarn install`](https://yarnpkg.com/lang/en/docs/cli/install/)
+
+Installs all the dependencies listed within package.json into the local node_modules folder.
+
 ### `yarn start`
 
 Runs the app in the development mode.<br>
