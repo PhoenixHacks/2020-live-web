@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/2020-live-web/static/css/main.17390d35.chunk.css",
+    "main.js": "/2020-live-web/static/js/main.d9c159ae.chunk.js",
+    "main.js.map": "/2020-live-web/static/js/main.d9c159ae.chunk.js.map",
+    "runtime-main.js": "/2020-live-web/static/js/runtime-main.c7a58986.js",
+    "runtime-main.js.map": "/2020-live-web/static/js/runtime-main.c7a58986.js.map",
+    "static/js/2.ab508233.chunk.js": "/2020-live-web/static/js/2.ab508233.chunk.js",
+    "static/js/2.ab508233.chunk.js.map": "/2020-live-web/static/js/2.ab508233.chunk.js.map",
+    "index.html": "/2020-live-web/index.html",
+    "precache-manifest.aaefc231bcfbc8df093fbf482d6ab2f2.js": "/2020-live-web/precache-manifest.aaefc231bcfbc8df093fbf482d6ab2f2.js",
+    "service-worker.js": "/2020-live-web/service-worker.js",
+    "static/css/main.17390d35.chunk.css.map": "/2020-live-web/static/css/main.17390d35.chunk.css.map",
+    "static/js/2.ab508233.chunk.js.LICENSE": "/2020-live-web/static/js/2.ab508233.chunk.js.LICENSE",
+    "static/media/style.scss": "/2020-live-web/static/media/PhoenixHacks-Regular.52c92d6c.ttf",
+    "static/media/IST.png": "/2020-live-web/static/media/IST.542e62bb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c7a58986.js",
+    "static/js/2.ab508233.chunk.js",
+    "static/css/main.17390d35.chunk.css",
+    "static/js/main.d9c159ae.chunk.js"
+  ]
+}
