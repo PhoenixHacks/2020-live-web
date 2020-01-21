@@ -18,11 +18,11 @@ export default class Header extends React.Component {
           <img src="https://phoenixhacks.com/img/fireball-phoenix-purple.svg" alt="phoenixhacks logo"></img>&nbsp;
           <span className="logo-text">
             <span className="capital">P</span>HOENIX<span className="capital">H</span>ACKS
-            {isLive ? <span className="live">LIVE</span> : <span className="live text-danger">LIVE</span>}
+            <span className="live">LIVE</span>
+            {/*isLive ? <span className="live">LIVE</span> : <span className="live text-danger">LIVE</span>*/}
           </span>
         </a>
         <Timer headerCallback={this.headerCallback} />
-        {isLive ? <span>hackathon in progress</span> : <span>hackathon not started</span>}
       </div>
     );
   }

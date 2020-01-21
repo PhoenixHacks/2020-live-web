@@ -7,7 +7,7 @@ async function read() {
   try {
     const { data } = await ai.get("/announcements");
 
-    return data.data.reverse();
+    return data.data;
   } catch (e) {
     return e;
   }

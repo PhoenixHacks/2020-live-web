@@ -6,13 +6,13 @@ export default class Timer extends React.Component {
   componentDidMount = () => this.countdown();
 
   countdown = () => {
-    let countDownDate = new Date("Jan 25, 2020 12:00:00").getTime();
+    let endDate = new Date("Jan 26, 2020 12:00:00").getTime();
 
     return setInterval(() => {
       let now = new Date().getTime();
       let isLive = false;
 
-      let distance = countDownDate - now;
+      let distance = endDate - now;
 
       let days = Math.floor(distance / (1000 * 60 * 60 * 24));
       let hours = Math.floor(
@@ -30,23 +30,27 @@ export default class Timer extends React.Component {
       let f_minutes = ("0" + minutes).slice(-2);
       let f_seconds = ("0" + seconds).slice(-2);
 
-      let timer = f_days + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
+      let startTimer = ("0" + (days - 1)).slice(-2) + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
+      let endTimer = f_days + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
       
-      if (days === 0 && timer !== "00:00:00:00") {
+      if (days === 0 && endTimer !== "00:00:00:00") {
         isLive = true;
       }
-      this.setState({now, timer, isLive});
+      this.setState({now, startTimer, endTimer, isLive});
       this.props.headerCallback(this.state)
     }, 1000);
   };
 
   render() {
-    const { now, timer, isLive } = this.state;
+    const { now, startTimer, endTimer, isLive } = this.state;
+    //TODO: have timer count down until start and then switch to countdown until end.
 
     return (
-      <div>
-        {isLive ? <h1 className="timer text-success">{timer}</h1> 
-                : <h1 className="timer text-danger">{timer}</h1>}
+      <div id="timer">
+        {isLive ? <span>ends in</span> 
+         : <span>starts in</span> }
+        {isLive ? <h1 className="timer">{endTimer}</h1>
+          : <h1 className="timer">{startTimer}</h1> }
       </div>
     )
   }

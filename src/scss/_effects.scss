@@ -1,7 +1,8 @@
 // _effects.scss
+@import 'base';
+
 .Blink {
   animation: blinker 1.5s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
-  padding-bottom: 10px;
 }
 @keyframes blinker {
   from {
@@ -13,11 +14,20 @@
 }
 
 .inner-shadow {
-  -moz-box-shadow:    inset 0 0 10px #000000;
-  -webkit-box-shadow: inset 0 0 10px #000000;
-  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 1px map-get($palette, background-quaternary);
+  -webkit-box-shadow: inset 0 0 1px map-get($palette, background-quaternary);
+  box-shadow:         inset 0 0 1px map-get($palette, background-quaternary);
 }
 
+.outer-shadow {
+  -moz-box-shadow:    0 0 1px map-get($palette, background-quaternary);
+  -webkit-box-shadow: 0 0 1px map-get($palette, background-quaternary);
+  box-shadow:         0 0 1px map-get($palette, background-quaternary);
+}
+
+.glow {
+  text-shadow:1px 1px 5px black, 1px 1px 5px #a3f7bf;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -26,16 +36,16 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #2f3136;
-  -webkit-border-radius: 6px;
+  background: map-get($palette, background-secondary);
+  -webkit-border-radius: 0 0 6px 0;
   border-radius: 0 0 6px 0;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #202225;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
+  background: map-get($palette, background-quaternary);
+  -webkit-border-radius: 0 0 6px 0;
+  border-radius: 0 0 6px 0;
 }
 
 ::-webkit-scrollbar-corner {

@@ -17,26 +17,26 @@ export default class Schedule extends React.Component {
   }
 
   tableSection(daytext, day, tab) {
-    // Add functionality to:
-    // - gray out past events
-    // - indicate which events are currently active
+    //TODO: reconsider the entire schedule design
+    //TODO: gray out (or remove?) past events
+    //TODO: indicate which events are currently active
+    //TODO: drop downs for the events (that show description)
+    //TODO: make AM and PM capital letters
     
     return (
-      <React.Fragment>
-        <h3 className="head-space">{daytext}</h3>
+      <div id="day">
+        <h3>{daytext}</h3>
         <table className="table table-hover">
           <thead>
-            <tr className="align-items-center">
-              <th scope="col" style={{width: "33.3333%"}}>Time</th>
-              <th scope="col" style={{width: "33.3333%"}}>Event/Activity</th>
-              <th scope="col" style={{width: "33.3333%"}}>Location</th>
+            <tr className="">
+              <th scope="col" style={{width: "30%"}}>Time</th>
+              <th scope="col" style={{width: "50%"}}>Event/Activity</th>
+              <th scope="col" style={{width: "20%"}}>Location</th>
             </tr>
           </thead>
           <tbody>
             {tab.filter(this.dayFilter(day)).map((item, index) => (
-              <tr className={ item.tags.includes("success") ? "table-success" 
-                  : (item.tags.includes("warning") ? "table-warning" : "")
-                  + " align-items-center"} key={item.event}>
+              <tr key={item.event}>
                 <th scope="row">{item.datetime.start}-{item.datetime.end}</th>
                 <td>{item.event}</td>
                 <td>{item.location}</td>
@@ -44,13 +44,13 @@ export default class Schedule extends React.Component {
             ))}
           </tbody>
         </table>
-      </React.Fragment>
+      </div>
     );
   }
 
-  renderTab2(tab) {
+  renderTab(tab) {
     return (
-      <div className="card-body event-list">
+      <div id="tab">
         {this.tableSection("Saturday, January 25", "25", tab)}
         {this.tableSection("Sunday, January 26", "26", tab)}
       </div>
@@ -88,22 +88,22 @@ export default class Schedule extends React.Component {
     const activities = schedule.filter(this.tagFilter("activity"));
 
     return (
-      <div className="schedule-tabs" id="schedule">
+      <div id="schedule">
         <Tabs defaultActiveKey="all-events" id="uncontrolled-tab-example">
           <Tab eventKey="all-events" title="All Events">
-            {this.renderTab2(schedule)}
+            {this.renderTab(schedule)}
           </Tab>
           <Tab eventKey="logistics" title="Logistics">
-            {this.renderTab2(logistics)}
+            {this.renderTab(logistics)}
           </Tab>
           <Tab eventKey="meals" title="Meals">
-            {this.renderTab2(meals)}
+            {this.renderTab(meals)}
           </Tab>
           <Tab eventKey="workshops" title="Workshops">
-            {this.renderTab2(workshops)}
+            {this.renderTab(workshops)}
           </Tab>
           <Tab eventKey="activities" title="Activities">
-            {this.renderTab2(activities)}
+            {this.renderTab(activities)}
           </Tab>
         </Tabs>
       </div>

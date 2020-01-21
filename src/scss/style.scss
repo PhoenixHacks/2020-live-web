@@ -7,12 +7,20 @@
   color: #d32f2f !important;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
   color: inherit;
+} a:hover {
+  color: map-get($palette, text-variant-1)
+}
+
+hr {
+  background: map-get($palette, background-secondary);
+  margin: 0;
 }
 
 #header {
+  display: grid;
   width: 100%;
   text-align: center;
   background-color: map-get($palette, background-quaternary);
@@ -20,6 +28,7 @@ a {
   //box-shadow: 0 0 1px rgba(0,0,0,0.12), 0 0 1px rgba(0,0,0,0.24);
 
   a {
+    grid-row: 1;
     $size: 64px; 
     height: $size;
     font-size: $size;
@@ -39,16 +48,16 @@ a {
 
       .live {
         font-family: $font-stack;
+        color: #a3f7bf;
       }
-      .capital {
-        @include font-size(64px);
-      }
+      .capital { @include font-size(64px); }
     }
   }
-}
 
-#timer {
-
+  #timer {
+    grid-row: 2;
+    h1 { margin: 0; }
+  }
 }
 
 #content {
@@ -62,6 +71,8 @@ a {
 
   #media {
     display: grid;
+    grid-template-columns: min-content auto min-content;
+    grid-auto-rows: minmax(min-content, max-content);
     grid-gap: 20px;
     //padding: 20px;
     //background: map-get($palette, background-tertiary);
@@ -75,23 +86,36 @@ a {
       border-radius: 6px;
 
       #links {
-        grid-area: 1 / 1;
+        grid-area: 2 / 1;
+        display: grid;
+        grid-gap: .5rem;
+        border-radius: 0 0 6px 6px;
+        padding: 10px;
+        border: 1px solid map-get($palette, text-variant-1);
+        h5 { margin: 0; }
       }
       #wifi {
-        grid-area: 1 / 2;
-        height: 100%;
+        grid-area: 1 / 1;
+        display: grid;
+        grid-gap: .5rem;
+        border-radius: 6px 6px 0 0;
+        padding: 10px;
+        border: 1px solid map-get($palette, text-variant-1);
+        h3 {
+          margin: 0;
+          //color: map-get($palette, text-variant-1); 
+        }
+        h5 { margin: 0; }
       }
       #radio {
         grid-area: 2 / span 2;
         
-        audio {
-          width: 100%;
-        }
+        audio { width: 100%;vertical-align: middle; }
       }
     }
 
     #announcements {
-      $height: 100%;
+      $height: 291px;
       grid-column: 2;
       display: grid;
       padding: 10px;
@@ -101,25 +125,31 @@ a {
 
       h2 {
         grid-row: 1;
-        text-align: center;
+        margin: auto;
         border-radius: 6px 6px 0 0;
-        align-self: center;
-        //height: (1/5) * 100%;
+        color: map-get($palette, text-variant-1);
+        font-weight: bold;
       }
       ul {
         grid-row: 2 / 10;
-        padding: 10px;
+        padding: 10px 10px 0 10px;
+        margin: 0;
         overflow-y: scroll;
         overflow-x: hidden;
         border-radius: 0 0 6px 6px;
+        border: 1px solid map-get($palette, text-variant-1);
+        //border: 1px solid map-get($palette, text-normal);
         background: map-get($palette, background-tertiary);
-        //height: (4/5) * 100%;
-
-        box-shadow: 0 0px 32px -15px #fff inset;
-        -moz-box-shadow:    inset 0 0 2px #000000;
-        -webkit-box-shadow: inset 0 0 2px #000000;
-        box-shadow:         inset 0 0 2px #000000;
       }
+    }
+
+    #resources {
+      grid-column: 3;
+      padding: 10px;
+      color: map-get($palette, text-variant-1); 
+      background: map-get($palette, background-primary);
+      border: 1px solid map-get($palette, text-variant-1);
+      border-radius: 6px;
     }
   }
 
@@ -128,19 +158,43 @@ a {
     background: map-get($palette, background-primary);
     border-radius: 6px;
 
-    table {
-      color: map-get($palette, text-normal);
+    #tab {
+      display: grid;
+      background: map-get($palette, background-secondary);
+      padding: 20px;
+      border: 1px solid map-get($palette, text-normal);
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+
+      #day {
+        h3 {
+          margin: 0;
+          color: map-get($palette, text-variant-1); 
+        }
+        table {
+          color: map-get($palette, text-normal);
+
+          tbody {
+            tr:hover { color: #ddc5eb; }
+          }
+    
+          tr.table-success, 
+          tr.table-warning { color: black; }
+        }
+      }
     }
   }
 
   #maps {
-    padding: 30px;
+    padding: 10px;
     background: map-get($palette, background-primary);
     border-radius: 6px;
     align-items: center;
 
     .map {
       width: 100%;
+      border: 1px solid map-get($palette, text-normal);
+      border-radius: 6px;
     }
   }
 }

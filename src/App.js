@@ -8,6 +8,7 @@ import Media from "./Components/Media";
 class App extends React.Component {
 
   render() {
+    // Add a helpful resources section.
     return (
       <div>
         <Header />

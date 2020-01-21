@@ -1,10 +1,10 @@
 import React from "react";
-import client from "socket.io-client";
+import io from "socket.io-client";
 
 import config from "../services/config";
 import announcements from "../services/announcements";
 
-const socket = client.connect(config.API_URL, { path: '/announcements' });
+const socket = io(config.API_URL, { path: '/announcements' });
 
 export default class Announcements extends React.Component {
   constructor(props) {
@@ -12,15 +12,15 @@ export default class Announcements extends React.Component {
     this.state = { announcements: [] };
 
     socket.on("announcements", data => {
-      let { announcements } = this.state;
+      this.setState({ announcements: data.reverse() });
+    });
 
-      announcements.unshift(data);
-
-      this.setState({ announcements });
+    socket.on('disconnect', (reason) => {
+      if (reason === 'io server disconnect') {
+        socket.connect();
+      }
     });
   }
-
-
 
   async componentDidMount() {
     const data = await announcements.read();
@@ -52,7 +52,7 @@ export default class Announcements extends React.Component {
     //let hour = time.replace(/^[^:]*([0-2]\d:[0-5]\d).*$/, "$1")
     let day = datetime.getDate()
     let hour = datetime.getHours()
-    let minute = datetime.getMinutes()
+    let minute = ("0" + datetime.getMinutes()).slice(-2);
 
     if (day === today) {
       day = "Today"
@@ -73,22 +73,28 @@ export default class Announcements extends React.Component {
 
   render() {
     const { announcements } = this.state;
+    //TODO: white border around the announcements
+    // - experimented with different colors; not sure; need feedback
+    
+    //DONE: fix issue with message being sent multiple times
+    
+    //TODO: fix issue with content disappearing (timeout?)
+    // - I thought it was due to my SSH tunnel being poor but it
+    //   still happens locally so this is not solved yet
+    
+    //DONE: fix issue with unshift error
 
-    // fix issue with message being sent multiple times
-    // fix issue with content disappearing (timeout?)
     return (
       <div id="announcements">
-        <h2 className="announcements-title">
-          <b>ANNOUNCEMENTS</b>
-        </h2>
-        <ul className="announcements-list" ref={(ul) => {this.messageList = ul;}}>
+        <h2>ANNOUNCEMENTS</h2>
+
+        <ul ref={(ul) => {this.messageList = ul;}}>
           {announcements.length > 0 ? (
-            announcements[0].map(announcement => (
-              <li>
+            announcements.map(announcement => (
+              <li key={announcement.time}>
                 <b style={{ color: "#586165" }}>
                   {this.processTime(announcement.time)}
                 </b><br/>
-                {/*&nbsp;*/}
                 <span style={{ fontSize: "20px", color: "#ffffff" }}>{announcement.message}</span>
                 <hr/>
               </li>
