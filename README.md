@@ -1,7 +1,9 @@
+# [PhoenixHacks 2020 Live Site](https://live.phoenixhacks.com)
+
 This project's history can be summarized as such:
  - Originally bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
  - Turned into [MangoHack's 2019 Live Site](https://github.com/MangoHacks/mango2019-live).
- - Which has since been heavily modified into the current project.
+ - Heavily modified into the current project.
 
 ## Available Scripts
 
