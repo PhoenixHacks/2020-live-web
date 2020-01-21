@@ -6,10 +6,12 @@
 }
 @keyframes blinker {
   from {
-    opacity: 1;
+    //opacity: 1;
+    color: map-get($palette, text-normal)
   }
   to {
-    opacity: 0;
+    //opacity: 0;
+    color: map-get($palette, text-variant-1)
   }
 }
 

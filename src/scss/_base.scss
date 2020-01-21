@@ -32,6 +32,8 @@ body {
   font: 100% $font-stack;
   background: map-get($palette, background-tertiary);
   color: map-get($palette, text-normal);
+  display: table;
+  width: 100%;
 }
 
 /*

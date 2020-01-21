@@ -1,6 +1,7 @@
 import React from "react";
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
+import schedule from "../services/schedule";
 
 export default class Schedule extends React.Component {
 
@@ -80,8 +81,6 @@ export default class Schedule extends React.Component {
   }
 
   render() {
-    const data = require("../data/schedule.json");
-    const schedule = data.schedule;
     const logistics = schedule.filter(this.tagFilter("logistics"));
     const meals = schedule.filter(this.tagFilter("meal"));
     const workshops = schedule.filter(this.tagFilter("workshop"));

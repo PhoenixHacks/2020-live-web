@@ -1,7 +1,44 @@
 import React from "react";
 
+const TimeUnits = () => (
+  <div id="timeUnits">
+    <div>
+      <svg>
+        <circle></circle>
+      </svg><br/>d
+    </div>
+    <div>
+      <svg>
+        <circle></circle>
+      </svg><br/>h
+    </div>
+    <div>
+      <svg>
+        <circle></circle>
+      </svg><br/>m
+    </div>
+    <div>
+      <svg>
+        <circle></circle>
+      </svg><br/>s
+    </div>
+  </div>
+)
+
+const Clock = ({ timer }) => (
+  <h1>
+    <span>{timer.f_days}</span>
+    <span>:</span>
+    <span>{timer.f_hours}</span>
+    <span>:</span>
+    <span>{timer.f_minutes}</span>
+    <span>:</span>
+    <span>{timer.f_seconds}</span>
+  </h1>
+)
+
 export default class Timer extends React.Component {
-  state = { timer: "00:00:00" };
+  state = { timer: "00:00:00:00" };
 
   componentDidMount = () => this.countdown();
 
@@ -30,27 +67,33 @@ export default class Timer extends React.Component {
       let f_minutes = ("0" + minutes).slice(-2);
       let f_seconds = ("0" + seconds).slice(-2);
 
-      let startTimer = ("0" + (days - 1)).slice(-2) + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
-      let endTimer = f_days + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
+      //let startTimer = ("0" + (days - 1)).slice(-2) + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
+      //let endTimer = f_days + ":" + f_hours + ":" + f_minutes + ":" + f_seconds;
       
-      if (days === 0 && endTimer !== "00:00:00:00") {
+      if (days === 0) {
         isLive = true;
       }
-      this.setState({now, startTimer, endTimer, isLive});
-      this.props.headerCallback(this.state)
+
+      if (!isLive) {
+        f_days = ("0" + (days - 1)).slice(-2)
+      } 
+      
+      let timer = { f_days, f_hours, f_minutes, f_seconds }
+      this.setState({ isLive, timer });
     }, 1000);
   };
 
   render() {
-    const { now, startTimer, endTimer, isLive } = this.state;
+    const { isLive, timer } = this.state;
     //TODO: have timer count down until start and then switch to countdown until end.
 
     return (
       <div id="timer">
         {isLive ? <span>ends in</span> 
          : <span>starts in</span> }
-        {isLive ? <h1 className="timer">{endTimer}</h1>
-          : <h1 className="timer">{startTimer}</h1> }
+        <Clock timer={timer}/>
+        <hr/>
+        <TimeUnits />
       </div>
     )
   }
