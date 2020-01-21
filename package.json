@@ -10,6 +10,7 @@
     "bufferutil": "^4.0.1",
     "discord.io": "^2.5.3",
     "discord.js": "^11.5.1",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "react": "^16.7.0",
     "react-bootstrap": "^1.0.0-beta.16",
@@ -27,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +41,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "."
+  "homepage": "https://phoenixhacks.github.io/2020-live-web"
 }
