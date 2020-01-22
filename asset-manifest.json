@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/2020-live-web/static/css/main.fa5c4399.chunk.css",
-    "main.js": "/2020-live-web/static/js/main.f2d8c229.chunk.js",
-    "main.js.map": "/2020-live-web/static/js/main.f2d8c229.chunk.js.map",
-    "runtime-main.js": "/2020-live-web/static/js/runtime-main.c7a58986.js",
-    "runtime-main.js.map": "/2020-live-web/static/js/runtime-main.c7a58986.js.map",
-    "static/js/2.88c417cd.chunk.js": "/2020-live-web/static/js/2.88c417cd.chunk.js",
-    "static/js/2.88c417cd.chunk.js.map": "/2020-live-web/static/js/2.88c417cd.chunk.js.map",
-    "index.html": "/2020-live-web/index.html",
-    "precache-manifest.fb2c638d29d8e105ee907bf9e52ddc8d.js": "/2020-live-web/precache-manifest.fb2c638d29d8e105ee907bf9e52ddc8d.js",
-    "service-worker.js": "/2020-live-web/service-worker.js",
-    "static/css/main.fa5c4399.chunk.css.map": "/2020-live-web/static/css/main.fa5c4399.chunk.css.map",
-    "static/js/2.88c417cd.chunk.js.LICENSE": "/2020-live-web/static/js/2.88c417cd.chunk.js.LICENSE",
-    "static/media/style.scss": "/2020-live-web/static/media/PhoenixHacks-Regular.52c92d6c.ttf",
-    "static/media/IST.png": "/2020-live-web/static/media/IST.542e62bb.png"
+    "main.css": "/static/css/main.f3c651f7.chunk.css",
+    "main.js": "/static/js/main.69a7285a.chunk.js",
+    "main.js.map": "/static/js/main.69a7285a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ee85be3f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ee85be3f.js.map",
+    "static/js/2.0a57a71a.chunk.js": "/static/js/2.0a57a71a.chunk.js",
+    "static/js/2.0a57a71a.chunk.js.map": "/static/js/2.0a57a71a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.2bbd6b87c5bcd7cca4ff1e0211632543.js": "/precache-manifest.2bbd6b87c5bcd7cca4ff1e0211632543.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.f3c651f7.chunk.css.map": "/static/css/main.f3c651f7.chunk.css.map",
+    "static/js/2.0a57a71a.chunk.js.LICENSE": "/static/js/2.0a57a71a.chunk.js.LICENSE",
+    "static/media/style.scss": "/static/media/PhoenixHacks-Regular.52c92d6c.ttf",
+    "static/media/IST.png": "/static/media/IST.542e62bb.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c7a58986.js",
-    "static/js/2.88c417cd.chunk.js",
-    "static/css/main.fa5c4399.chunk.css",
-    "static/js/main.f2d8c229.chunk.js"
+    "static/js/runtime-main.ee85be3f.js",
+    "static/js/2.0a57a71a.chunk.js",
+    "static/css/main.f3c651f7.chunk.css",
+    "static/js/main.69a7285a.chunk.js"
   ]
 }
