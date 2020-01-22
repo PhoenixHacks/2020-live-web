@@ -1,0 +1,99 @@
+// _schedule.scss
+@import 'base';
+@import 'effects';
+
+#schedule {
+  padding: 10px;
+  background: map-get($palette, background-primary);
+  border-radius: 6px;
+
+  .nav {
+    border-bottom: 1px solid map-get($palette, text-variant-1);
+
+    .nav-link:hover {
+      border: 1px solid map-get($palette, text-variant-1);
+    }
+
+    .active {
+      background-color: map-get($palette, text-variant-1);
+      border: 1px solid map-get($palette, text-variant-1);
+      color: map-get($palette, text-dark);
+    }
+  }
+
+  #tab {
+    display: grid;
+    grid-gap: 10px;
+    background: map-get($palette, background-secondary);
+    padding: 10px;
+    border: 1px solid map-get($palette, text-variant-1);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+
+    #day {
+      border: 1px solid map-get($palette, text-normal);
+
+      h3 {
+        margin: 0;
+        padding: 10px;
+        color: map-get($palette, text-variant-1);
+        background: #383838;
+        font-weight: bold;
+        text-align: center;
+      }
+      table {
+        color: map-get($palette, text-normal);
+        margin: 0;
+        border-collapse: collapse;
+        empty-cells: show;
+
+        th, td {
+          border-color: map-get($palette, text-muted);
+          vertical-align: middle;
+        }
+
+        .indicator {
+          padding: 0;
+          margin: 0;
+        }
+
+        tbody {
+          tr:nth-child(odd) { background: #383838; }
+          tr:hover { color: #ddc5eb; background: #2c2c2c; }
+          
+          tr#dropdown {
+            background-color: map-get($palette, background-quaternary);
+          }
+          tr.hiddenRow {
+            display: none;
+          }
+
+          tr.expired {
+            position: relative;
+            th, td { position: relative; }
+          
+            th:before,
+            td:before {
+              content: " ";
+              position: absolute;
+              top: 50%;
+              left: 0;
+              border-bottom: 1px solid map-get($palette, text-normal);
+              width: 100%;
+            }
+
+            th:after,
+            td:after {
+              content: "\00B7";
+              font-size: 1px;
+            }
+          }
+
+          td#greenlight { background-color: #a9cf54; }
+          td#yellowlight { background-color: #f7e967; }
+          td#redlight { background-color: #f1433f; }
+        }
+      }
+    }
+  }
+}

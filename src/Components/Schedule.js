@@ -78,7 +78,16 @@ export default class Schedule extends React.Component {
     }
   }
 
-  tableSection(day, date, tabEvents) {
+  formatDateText(datetext) {
+    let date = new Date(datetext + 'T12:00:00Z');
+    let weekday = date.toLocaleString('en-US', { weekday: 'long'});
+    let month = date.toLocaleString('en-US', { month: 'long'});
+    let monthday = date.getDate();
+
+    return weekday + ', ' + month + ' ' + monthday;
+  }
+
+  tableSection(datetext, tabEvents) {
     //TODO: reconsider the entire schedule design?
     //DONE: gray out (or remove?) past events
       //TODO - currently utilizing strikethrough
@@ -93,12 +102,13 @@ export default class Schedule extends React.Component {
     //DONE: add a vertical indicator at the beginning of certain rows
 
     let { now } = this.state;
-    let dateFilteredEvents = tabEvents.filter(this.dateFilter(date));
+    let dateFilteredEvents = tabEvents.filter(this.dateFilter(datetext));
+
     
     if (dateFilteredEvents && dateFilteredEvents.length) {
       return (
         <div id="day">
-          <h3>{day}</h3>
+          <h3>{this.formatDateText(datetext)}</h3>
           <table className="table table-hover">
             <thead>
               <tr>
@@ -128,11 +138,12 @@ export default class Schedule extends React.Component {
     }
   }
 
-  renderTab(tab) {
+  renderTab(tabEvents) {
+    let days = [...new Set(tabEvents.map( (event) => event.date ))];
+
     return (
       <div id="tab">
-        {this.tableSection("Saturday, January 25", '2020-01-25', tab)}
-        {this.tableSection("Sunday, January 26", '2020-01-26', tab)}
+        {days.map((day) => <>{this.tableSection(day, tabEvents)}</>)}
       </div>
     );
   }

@@ -1,0 +1,138 @@
+// _media.scss
+@import 'base';
+@import 'effects';
+
+#media {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-gap: 20px;
+  
+  @media (max-width: map-get($screen-sizes, lg)) {
+    grid-template-columns: min-content auto;
+  } 
+  @media (max-width: map-get($screen-sizes, sm)) {
+    grid-template-columns: auto;
+  }
+  @media (max-width: map-get($screen-sizes, xs)) {
+    
+  }
+
+  #info {
+    grid-column: 1;
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+    background: map-get($palette, background-primary);
+    border-radius: 6px;
+
+    @media (max-width: map-get($screen-sizes, sm)) {
+      grid-template-columns: auto min-content;
+    }
+    @media (max-width: map-get($screen-sizes, xs)) {
+      grid-template-columns: auto auto;
+      text-align: center;
+    }
+
+    #links {
+      grid-area: 2 / 1;
+      display: grid;
+      grid-gap: .5rem;
+      border-radius: 0 0 6px 6px;
+      padding: 10px;
+      border: 1px solid map-get($palette, text-variant-1);
+      h5 { margin: 0; }
+
+      @media (max-width: map-get($screen-sizes, sm)) {
+        grid-area: 1 / 1;
+        border-radius: 6px 0 0 6px;
+      }
+    }
+    #wifi {
+      grid-area: 1 / 1;
+      display: grid;
+      grid-gap: .5rem;
+      border-radius: 6px 6px 0 0;
+      padding: 10px;
+      border: 1px solid map-get($palette, text-variant-1);
+      h3 {
+        margin: 0;
+        //color: map-get($palette, text-variant-1); 
+      }
+      h5 { margin: 0; }
+
+      @media (max-width: map-get($screen-sizes, sm)) {
+        grid-area: 1 / 2;
+        border-radius: 0 6px 6px 0;
+      }
+    }
+    #radio {
+      grid-area: 2 / span 2;
+      
+      audio { width: 100%;vertical-align: middle; }
+    }
+  }
+
+  #announcements {
+    $height: 291px;
+    grid-column: 2;
+    display: grid;
+    padding: 0 10px 10px 10px;
+    background: map-get($palette, background-primary);
+    border-radius: 6px;
+    height: $height;
+
+    @media (max-width: map-get($screen-sizes, lg)) {
+      grid-area: 2 / span 2;
+    }
+    @media (max-width: map-get($screen-sizes, xs)) {
+      grid-area: 3 / 1;
+    }
+
+    h2 {
+      grid-row: 1;
+      margin: auto;
+      padding: 10px;
+      border-radius: 6px 6px 0 0;
+      color: map-get($palette, text-variant-1);
+      font-weight: bold;
+    }
+    ul {
+      grid-row: 2 / 10;
+      padding: 10px 10px 0 10px;
+      margin: 0;
+      list-style-type: none;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      border-radius: 0 0 6px 6px;
+      border: 1px solid map-get($palette, text-variant-1);
+      //border: 1px solid map-get($palette, text-normal);
+      background: map-get($palette, background-tertiary);
+      color: map-get($palette, text-muted);
+
+      li {
+        span {
+          font-size: 20px;
+          color: map-get($palette, text-normal);
+        }
+      }
+    }
+  }
+
+  #resources {
+    grid-column: 3;
+    padding: 10px;
+    color: map-get($palette, text-variant-1); 
+    background: map-get($palette, background-primary);
+    border: 1px solid map-get($palette, text-variant-1);
+    border-radius: 6px;
+    text-align: center;
+
+    @media (max-width: map-get($screen-sizes, lg)) {
+      grid-column: 2;
+    }
+    @media (max-width: map-get($screen-sizes, xs)) {
+      grid-area: 2 / 1;
+    }
+  }
+}
