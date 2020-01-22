@@ -92,7 +92,7 @@ const events = [
     "date": "2020-01-25",
     "time": {
       "start": "16:00:00",
-      "end": "26:45:00",
+      "end": "16:45:00",
     },
     "tags": ["workshop"],
     "location": "IST-1014",

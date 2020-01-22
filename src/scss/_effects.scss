@@ -18,10 +18,11 @@
 }
 @keyframes active {
   from {
-    color: map-get($palette, text-normal)
+    //color: map-get($palette, text-normal)
   }
   to {
-    color: map-get($palette, text-variant-1)
+    background: map-get($palette, text-variant-1);
+    opacity: 0.75;
   }
 }
 

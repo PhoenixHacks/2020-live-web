@@ -36,8 +36,11 @@ export default class Schedule extends React.Component {
 
   tableSection(day, date, tab) {
     //TODO: reconsider the entire schedule design
-    //TODO: gray out (or remove?) past events
-    //TODO: indicate which events are currently active
+    //DONE: gray out (or remove?) past events
+      //- currently utilizing strikethrough
+    //DONE: indicate which events are currently active
+      //- still not sure of the best method;
+      //  currently have an animation that alternates color
     //TODO: drop downs for the events (that show description)
     //DONE: make AM and PM capital letters
     //TODO: make border and tab purple with white text
