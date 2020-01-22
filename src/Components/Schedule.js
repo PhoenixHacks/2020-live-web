@@ -28,9 +28,11 @@ export default class Schedule extends React.Component {
 
   getDates(event) {
     let { start, end } = event.time;
-    let eventStart = new Date(event.date + 'T' + start + 'Z');
-    let eventEnd = new Date(event.date + 'T' + end + 'Z');
-
+    let es = new Date(event.date + 'T' + start + 'Z');
+    es.setTime( es.getTime() + es.getTimezoneOffset()*60*1000 );
+    let ee = new Date(event.date + 'T' + end + 'Z');
+    ee.setTime( ee.getTime() + ee.getTimezoneOffset()*60*1000 );
+    let eventStart = es, eventEnd = ee;
     return { eventStart, eventEnd };
   }
 
