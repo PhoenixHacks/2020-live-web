@@ -11,13 +11,6 @@ export default class Announcements extends React.Component {
   constructor(props) {
     super(props);
     this.state = { announcements: [] };
-    /*
-
-    socket.on('disconnect', (reason) => {
-      if (reason === 'io server disconnect') {
-        socket.connect();
-      }
-    });*/
   }
 
   async componentDidMount() {
