@@ -23,6 +23,7 @@ export default class Schedule extends React.Component {
     //TODO: indicate which events are currently active
     //TODO: drop downs for the events (that show description)
     //TODO: make AM and PM capital letters
+    //TODO: make border and tab purple with white text
     
     return (
       <div id="day">

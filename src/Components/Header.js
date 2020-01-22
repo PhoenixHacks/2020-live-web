@@ -7,7 +7,7 @@ const Header = () => (
     <a href="/">
       <img src="https://phoenixhacks.com/img/fireball-phoenix-purple.svg"
         alt="phoenixhacks logo"></img>
-      <span className="logo-text Blink">
+      <span className="logo-text">
         <span className="capital">P</span>HOENIX
         <span className="capital">H</span>ACKS
         <span className="live">LIVE</span>
