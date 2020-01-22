@@ -246,6 +246,7 @@ hr {
           color: map-get($palette, text-variant-1);
           background: #383838;
           font-weight: bold;
+          text-align: center;
         }
         table {
           color: map-get($palette, text-normal);
@@ -255,12 +256,24 @@ hr {
 
           th, td {
             border-color: map-get($palette, text-muted);
+            vertical-align: middle;
+          }
+
+          .indicator {
+            padding: 0;
+            margin: 0;
           }
 
           tbody {
             tr:nth-child(odd) { background: #383838; }
             tr:hover { color: #ddc5eb; background: #2c2c2c; }
             
+            tr#dropdown {
+              background-color: map-get($palette, background-quaternary);
+            }
+            tr.hiddenRow {
+              display: none;
+            }
 
             tr.expired {
               position: relative;
@@ -282,6 +295,10 @@ hr {
                 font-size: 1px;
               }
             }
+
+            td#greenlight { background-color: #a9cf54; }
+            td#yellowlight { background-color: #f7e967; }
+            td#redlight { background-color: #f1433f; }
           }
         }
       }
@@ -299,6 +316,7 @@ hr {
       background: map-get($palette, background-tertiary);
       border: 1px solid map-get($palette, text-normal);
       border-radius: 6px;
+      opacity: 0.7;
     }
   }
 }

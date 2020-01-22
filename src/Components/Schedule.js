@@ -26,7 +26,44 @@ export default class Schedule extends React.Component {
     }
   }
 
-  formatTime(start, end) {
+  getDates(event) {
+    let { start, end } = event.time;
+    let eventStart = new Date(event.date + 'T' + start + 'Z');
+    let eventEnd = new Date(event.date + 'T' + end + 'Z');
+
+    return { eventStart, eventEnd };
+  }
+
+  getTimes(event) {
+    let { eventStart, eventEnd } = this.getDates(event);
+    eventStart = eventStart.getTime();
+    eventEnd = eventEnd.getTime();
+
+    return { eventStart, eventEnd };
+  }
+
+  eventStatus(event, now) {
+    let { eventStart, eventEnd } = this.getTimes(event);
+    return (now > eventStart && now < eventEnd) ? "Active"
+      : (now > eventEnd) ? "expired" : "";
+  }
+
+  formatTime(time) {
+    let minute = ("0" + time.getMinutes()).slice(-2);
+    let hour = time.getHours();
+    let meridian = 'AM';
+    if (hour === 0) { hour = 12 }
+    else if (hour > 12) { hour -= 12; meridian = 'PM'; }
+    hour = ("0" + hour).slice(-2);
+
+    return (hour + ':' + minute + meridian);
+  }
+
+  formatTimes(event) {
+    let { eventStart, eventEnd } = this.getDates(event);
+    let start = this.formatTime(eventStart);
+    let end = this.formatTime(eventEnd);
+    
     if (start === end) {
       return start;
     } else {
@@ -34,46 +71,61 @@ export default class Schedule extends React.Component {
     }
   }
 
-  tableSection(day, date, tab) {
-    //TODO: reconsider the entire schedule design
-    //DONE: gray out (or remove?) past events
-      //- currently utilizing strikethrough
-    //DONE: indicate which events are currently active
-      //- still not sure of the best method;
-      //  currently have an animation that alternates color
-    //TODO: drop downs for the events (that show description)
-    //DONE: make AM and PM capital letters
-    //TODO: make border and tab purple with white text
-      //- need feedback
+  dropDown(name) {
+    let rows = document.getElementsByName(name);
+    for (let i=0; i < rows.length; i++) {
+      rows[i].className = (rows[i].className === "hiddenRow") ? "" : "hiddenRow";
+    }
+  }
 
-    let { now } = this.state
+  tableSection(day, date, tabEvents) {
+    //TODO: reconsider the entire schedule design?
+    //DONE: gray out (or remove?) past events
+      //TODO - currently utilizing strikethrough
+    //DONE: indicate which events are currently active
+      //TODO - still not sure of the best method;
+            // currently have an animation that alternates color
+    //DONE: drop downs for the events (that show description)
+      //TODO - now I just need actual content for these dropdowns
+    //DONE: make AM and PM capital letters
+    //DONE: make border and tab purple with white text
+      //TODO - need feedback
+    //DONE: add a vertical indicator at the beginning of certain rows
+
+    let { now } = this.state;
+    let dateFilteredEvents = tabEvents.filter(this.dateFilter(date));
     
-    return (
-      <div id="day">
-        <h3>{day}</h3>
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th style={{width: "30%"}}>Time</th>
-              <th style={{width: "50%"}}>Event/Activity</th>
-              <th style={{width: "20%"}}>Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tab.filter(this.dateFilter(date)).map((event, index) => (
-              <tr key={event.name} 
-                className={ this.eventStatus(event, now) }>
-                <th>
-                  {this.formatTime(event.time.start, event.time.end)}
-                </th>
-                <td>{event.name}</td>
-                <td>{event.location}</td>
+    if (dateFilteredEvents && dateFilteredEvents.length) {
+      return (
+        <div id="day">
+          <h3>{day}</h3>
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th style={{width: "0.6%"}} className="indicator"></th>
+                <th style={{width: "24.7%"}}>Time</th>
+                <th style={{width: "50%"}}>Event/Activity</th>
+                <th style={{width: "24.7%"}}>Location</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
+            </thead>
+            <tbody>
+              {dateFilteredEvents.map((event, index) => (<>
+                <tr key={event.name} onClick={ () => this.dropDown(event.name) }
+                  className={ this.eventStatus(event, now) }>
+                  <td id={event.tags[1]} className="indicator"></td>
+                  <th>{this.formatTimes(event)}</th>
+                  <td>{event.name}</td>
+                  <td>{event.location}</td>
+                </tr>
+                <tr name={event.name} className="hiddenRow" id="dropdown">
+                  <td colSpan="4">{event.description}</td>
+                </tr>
+              </>))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
   }
 
   renderTab(tab) {
@@ -83,21 +135,6 @@ export default class Schedule extends React.Component {
         {this.tableSection("Sunday, January 26", '2020-01-26', tab)}
       </div>
     );
-  }
-
-  getTimes(event) {
-    let { start, end } = event.time
-
-    let eventStart = new Date(event.date + 'T' + start + 'Z').getTime();
-    let eventEnd = new Date(event.date + 'T' + end + 'Z').getTime();
-
-    return { eventStart, eventEnd }
-  }
-
-  eventStatus(event, now) {
-    let { eventStart, eventEnd } = this.getTimes(event);
-    return (now > eventStart && now < eventEnd) ? "Active"
-      : (now > eventEnd) ? "expired" : "";
   }
 
   render() {
