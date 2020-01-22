@@ -55,7 +55,7 @@ export default class Announcements extends React.Component {
     } else if (hour < 12) {
       hour = hour + ":" + minute + " AM"
     } else {
-      hour = hour + ":" + minute + " PM"
+      hour = (hour - 12) + ":" + minute + " PM"
     }
 
     return day + " at " + hour
@@ -63,7 +63,7 @@ export default class Announcements extends React.Component {
 
   render() {
     const { announcements } = this.state;
-    //TODO: white border around the announcements
+    //DONE: white border around the announcements
       //- experimented with different colors; not sure; need feedback
     //DONE: fix issue with message being sent multiple times
     //DONE: fix issue with content disappearing (timeout?)

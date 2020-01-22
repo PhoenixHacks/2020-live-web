@@ -6,11 +6,21 @@
 }
 @keyframes blinker {
   from {
-    //opacity: 1;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.Active {
+  animation: active 1.5s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+}
+@keyframes active {
+  from {
     color: map-get($palette, text-normal)
   }
   to {
-    //opacity: 0;
     color: map-get($palette, text-variant-1)
   }
 }

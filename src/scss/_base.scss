@@ -7,9 +7,14 @@
 }
 
 @include font-face(PhoenixHacks, './fonts/PhoenixHacks-Regular.ttf');
-@include font-face(Bahnschrift, './fonts/BAHNSCHRIFT.TTF');
+//@include font-face(Bahnschrift, './fonts/BAHNSCHRIFT.TTF');
+@include font-face('Noto Mono', './fonts/NotoMono-Regular.woff');
+@include font-face('Liberation Mono', './fonts/LiberationMono/LiberationMono-Regular.woff');
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif);
 
-$font-stack: Bahnschrift, Helvetica, sans-serif;
+$font-stack: Noto Sans, sans-serif;//Bahnschrift, Helvetica, sans-serif;
 $palette: (
   background-primary: #424242,//#36393f,
   background-secondary: #303030,//#2f3136,
@@ -17,7 +22,8 @@ $palette: (
   background-quaternary: #000000,
   text-normal: #dcddde,
   text-muted: #72767d,
-  text-variant-1: #b179d2//#8f40bf
+  text-variant-1: #b179d2,//#8f40bf
+  text-dark: #000000
 );
 $screen-sizes: (
   xxs: 320px,
@@ -35,6 +41,9 @@ body {
   display: table;
   width: 100%;
 }
+
+h1, h2, h3, h4, h5, h6 {font-family: 'Noto Serif'; }
+table { font-family: 'Noto Mono'; }
 
 /*
 *:focus {

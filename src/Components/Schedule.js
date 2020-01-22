@@ -1,47 +1,70 @@
 import React from "react";
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
-import schedule from "../services/schedule";
+import events from "../services/events";
 
 export default class Schedule extends React.Component {
+  state = { now: null };
 
-  tagFilter(event_tag) {
+  componentDidMount = () => this.time();
+
+  time = () => {
+    return setInterval(() => {
+      this.setState({ now: new Date().getTime() });
+    }, 1000);
+  };
+
+  tagFilter(tag) {
     return function(event) {
-      return event.tags.includes(event_tag);
+      return event.tags.includes(tag);
     }
   }
 
-  dayFilter(event_day) {
+  dateFilter(date) {
     return function(event) {
-      return event.datetime.day === event_day;
+      return event.date === date;
     }
   }
 
-  tableSection(daytext, day, tab) {
+  formatTime(start, end) {
+    if (start === end) {
+      return start;
+    } else {
+      return (start + '-' + end);
+    }
+  }
+
+  tableSection(day, date, tab) {
     //TODO: reconsider the entire schedule design
     //TODO: gray out (or remove?) past events
     //TODO: indicate which events are currently active
     //TODO: drop downs for the events (that show description)
-    //TODO: make AM and PM capital letters
+    //DONE: make AM and PM capital letters
     //TODO: make border and tab purple with white text
+      //- need feedback
+
+    let { now } = this.state
     
     return (
       <div id="day">
-        <h3>{daytext}</h3>
+        <h3>{day}</h3>
         <table className="table table-hover">
           <thead>
-            <tr className="">
-              <th scope="col" style={{width: "30%"}}>Time</th>
-              <th scope="col" style={{width: "50%"}}>Event/Activity</th>
-              <th scope="col" style={{width: "20%"}}>Location</th>
+            <tr>
+              <th style={{width: "30%"}}>Time</th>
+              <th style={{width: "50%"}}>Event/Activity</th>
+              <th style={{width: "20%"}}>Location</th>
             </tr>
           </thead>
           <tbody>
-            {tab.filter(this.dayFilter(day)).map((item, index) => (
-              <tr key={item.event}>
-                <th scope="row">{item.datetime.start}-{item.datetime.end}</th>
-                <td>{item.event}</td>
-                <td>{item.location}</td>
+            {tab.filter(this.dateFilter(date)).map((event, index) => (
+              <tr key={event.name} 
+                className={ this.eventStatus(event, now) }>
+                <th>
+                  {this.formatTime(event.time.start, event.time.end)}
+                </th>
+                <td>{event.name}</td>
+                <td>{event.location}</td>
               </tr>
             ))}
           </tbody>
@@ -53,45 +76,38 @@ export default class Schedule extends React.Component {
   renderTab(tab) {
     return (
       <div id="tab">
-        {this.tableSection("Saturday, January 25", "25", tab)}
-        {this.tableSection("Sunday, January 26", "26", tab)}
+        {this.tableSection("Saturday, January 25", '2020-01-25', tab)}
+        {this.tableSection("Sunday, January 26", '2020-01-26', tab)}
       </div>
     );
   }
 
-  removeMeridiem(time) {
-    time = time.split("am").pop();
-    time = time.split("pm").pop();
-    return time;
+  getTimes(event) {
+    let { start, end } = event.time
+
+    let eventStart = new Date(event.date + 'T' + start + 'Z').getTime();
+    let eventEnd = new Date(event.date + 'T' + end + 'Z').getTime();
+
+    return { eventStart, eventEnd }
   }
 
-  eventActive(event, now) {
-    let { start, end, day } = event.datetime
-
-    start = this.removeMeridiem(start)
-    end = this.removeMeridiem(end)
-
-    var eventStart = new Date("Jan " + day + ", 2020 " + start + ":00").getTime();
-    var eventEnd = new Date("Jan " + day + ", 2020 " + end + ":00").getTime();
-
-    if (now > eventStart && now < eventEnd) {
-      return true;
-    } else {
-      return false;
-    }
+  eventStatus(event, now) {
+    let { eventStart, eventEnd } = this.getTimes(event);
+    return (now > eventStart && now < eventEnd) ? "Active"
+      : (now > eventEnd) ? "expired" : "";
   }
 
   render() {
-    const logistics = schedule.filter(this.tagFilter("logistics"));
-    const meals = schedule.filter(this.tagFilter("meal"));
-    const workshops = schedule.filter(this.tagFilter("workshop"));
-    const activities = schedule.filter(this.tagFilter("activity"));
+    const logistics = events.filter(this.tagFilter("logistics"));
+    const meals = events.filter(this.tagFilter("meal"));
+    const workshops = events.filter(this.tagFilter("workshop"));
+    const activities = events.filter(this.tagFilter("activity"));
 
     return (
       <div id="schedule">
-        <Tabs defaultActiveKey="all-events" id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey="all-events">
           <Tab eventKey="all-events" title="All Events">
-            {this.renderTab(schedule)}
+            {this.renderTab(events)}
           </Tab>
           <Tab eventKey="logistics" title="Logistics">
             {this.renderTab(logistics)}

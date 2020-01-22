@@ -66,11 +66,13 @@ hr {
       margin: auto;
       display: grid;
       grid-template-columns: 1fr min-content 1fr min-content 1fr min-content 1fr;
-      width: 6em;
+      width: 7em;
+      font-family: 'Noto Mono';
+      //font-size: 32px;
     }
 
     hr {
-      width: 14em;
+      width: 14.5em;
       border: 1px solid map-get($palette, text-variant-1);
       margin: 0 auto;
     }
@@ -78,14 +80,17 @@ hr {
     #timeUnits {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      width: 15.5em;
+      width: 19em;
       margin: auto;
       color: map-get($palette, text-variant-1);
 
       div {
+        position: relative;
+        $transition: -0.8rem;
+        top: $transition;
+        margin-bottom: $transition;
+
         svg {
-          position: relative;
-          top: -10px;
           height: 10px;
           width: 10px;
 
@@ -159,7 +164,7 @@ hr {
       $height: 291px;
       grid-column: 2;
       display: grid;
-      padding: 10px;
+      padding: 0 10px 10px 10px;
       background: map-get($palette, background-primary);
       border-radius: 6px;
       height: $height;
@@ -167,6 +172,7 @@ hr {
       h2 {
         grid-row: 1;
         margin: auto;
+        padding: 10px;
         border-radius: 6px 6px 0 0;
         color: map-get($palette, text-variant-1);
         font-weight: bold;
@@ -208,28 +214,75 @@ hr {
     background: map-get($palette, background-primary);
     border-radius: 6px;
 
+    .nav {
+      border-bottom: 1px solid map-get($palette, text-variant-1);
+
+      .nav-link:hover {
+        border: 1px solid map-get($palette, text-variant-1);
+      }
+
+      .active {
+        background-color: map-get($palette, text-variant-1);
+        border: 1px solid map-get($palette, text-variant-1);
+        color: map-get($palette, text-dark);
+      }
+    }
+
     #tab {
       display: grid;
+      grid-gap: 10px;
       background: map-get($palette, background-secondary);
-      padding: 20px;
-      border: 1px solid map-get($palette, text-normal);
+      padding: 10px;
+      border: 1px solid map-get($palette, text-variant-1);
       border-top: none;
       border-radius: 0 0 6px 6px;
 
       #day {
+        border: 1px solid map-get($palette, text-normal);
+
         h3 {
           margin: 0;
-          color: map-get($palette, text-variant-1); 
+          padding: 10px;
+          color: map-get($palette, text-variant-1);
+          background: #383838;
+          font-weight: bold;
         }
         table {
           color: map-get($palette, text-normal);
+          margin: 0;
+          border-collapse: collapse;
+          empty-cells: show;
+
+          th, td {
+            border-color: map-get($palette, text-muted);
+          }
 
           tbody {
-            tr:hover { color: #ddc5eb; }
+            tr:nth-child(odd) { background: #383838; }
+            tr:hover { color: #ddc5eb; background: #2c2c2c; }
+            
+
+            tr.expired {
+              position: relative;
+              th, td { position: relative; }
+            
+              th:before,
+              td:before {
+                content: " ";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                border-bottom: 1px solid map-get($palette, text-normal);
+                width: 100%;
+              }
+
+              th:after,
+              td:after {
+                content: "\00B7";
+                font-size: 1px;
+              }
+            }
           }
-    
-          tr.table-success, 
-          tr.table-warning { color: black; }
         }
       }
     }
@@ -243,6 +296,7 @@ hr {
 
     .map {
       width: 100%;
+      background: map-get($palette, background-tertiary);
       border: 1px solid map-get($palette, text-normal);
       border-radius: 6px;
     }
