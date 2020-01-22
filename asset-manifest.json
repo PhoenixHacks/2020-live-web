@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/2020-live-web/static/css/main.fa5c4399.chunk.css",
-    "main.js": "/2020-live-web/static/js/main.028bc6d7.chunk.js",
-    "main.js.map": "/2020-live-web/static/js/main.028bc6d7.chunk.js.map",
+    "main.js": "/2020-live-web/static/js/main.f2d8c229.chunk.js",
+    "main.js.map": "/2020-live-web/static/js/main.f2d8c229.chunk.js.map",
     "runtime-main.js": "/2020-live-web/static/js/runtime-main.c7a58986.js",
     "runtime-main.js.map": "/2020-live-web/static/js/runtime-main.c7a58986.js.map",
     "static/js/2.88c417cd.chunk.js": "/2020-live-web/static/js/2.88c417cd.chunk.js",
     "static/js/2.88c417cd.chunk.js.map": "/2020-live-web/static/js/2.88c417cd.chunk.js.map",
     "index.html": "/2020-live-web/index.html",
-    "precache-manifest.a522476138048600c393e3ccfc5d164e.js": "/2020-live-web/precache-manifest.a522476138048600c393e3ccfc5d164e.js",
+    "precache-manifest.fb2c638d29d8e105ee907bf9e52ddc8d.js": "/2020-live-web/precache-manifest.fb2c638d29d8e105ee907bf9e52ddc8d.js",
     "service-worker.js": "/2020-live-web/service-worker.js",
     "static/css/main.fa5c4399.chunk.css.map": "/2020-live-web/static/css/main.fa5c4399.chunk.css.map",
     "static/js/2.88c417cd.chunk.js.LICENSE": "/2020-live-web/static/js/2.88c417cd.chunk.js.LICENSE",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.c7a58986.js",
     "static/js/2.88c417cd.chunk.js",
     "static/css/main.fa5c4399.chunk.css",
-    "static/js/main.028bc6d7.chunk.js"
+    "static/js/main.f2d8c229.chunk.js"
   ]
 }
