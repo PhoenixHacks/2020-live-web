@@ -51,14 +51,6 @@ export default class Schedule extends React.Component {
     let { start, end } = event.time;
     let es = new Date(event.date + 'T' + start + 'Z');
     let ee = new Date(event.date + 'T' + end + 'Z');
-    let date;
-
-    if (end === '00:00:00') {
-      date = new Date(event.date);
-      //console.log(date);
-      date.setDate(date.getDate() + 1);
-      es = date;
-    }
 
     let ESToffset = 300; //Timezone offset for EST in minutes.
     let eventStart = new Date( es.getTime() + ESToffset*60*1000 );
@@ -78,11 +70,8 @@ export default class Schedule extends React.Component {
   formatTime(time) {
     let minute = ("0" + time.getMinutes()).slice(-2);
     let hour = time.getHours();
-    let meridian = 'AM';
-    if (hour === 0) { hour = 12 }
-    else if (hour === 12) { meridian = 'PM'; }
-    else if (hour > 12) { hour -= 12; meridian = 'PM'; }
-    hour = ("0" + hour).slice(-2);
+    let meridian = (hour < 12) ? 'AM' : 'PM';
+    hour = ("0" + ((hour % 12) || 12)).slice(-2);
 
     return (hour + ':' + minute + meridian);
   }
@@ -128,7 +117,6 @@ export default class Schedule extends React.Component {
   tableSection(datetext, tabEvents) {
     //TODO: add content to the event dropdowns
     //TODO: Refine the hidden location and content
-    //TODO: figure out why werewolf has expired when it should have yet
 
     let { now } = this.state;
     let dateFilteredEvents = tabEvents.filter(this.dateFilter(datetext));

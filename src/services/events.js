@@ -1,3 +1,9 @@
+// events.js
+/* NOTE: Be careful of midnight. 
+00:00:00 is 12:00AM of the current day
+24:00:00 is 12:00AM of the next day
+*/
+
 const events = [
   {
     "name": "Check-In",
@@ -169,7 +175,7 @@ const events = [
     "date": "2020-01-23",
     "time": {
       "start": "23:00:00",
-      "end": "00:00:00",
+      "end": "24:00:00",
     },
     "tags": ["activity"],
     "location": "IST-1012",
