@@ -34,13 +34,26 @@ $screen-sizes: (
   xl: 1200px
 );
 
+* {
+  //box-sizing: border-box;
+  //padding: 0;
+  //margin: 0;
+  min-width: 0;
+}
+
 body {
   font: 100% $font-stack;
   background: map-get($palette, background-tertiary);
   color: map-get($palette, text-normal);
-  display: table;
-  width: 100%;
+  //display: table;
+  //width: 100%;
 }
+/*
+#root {
+  width: 100%;
+  display: grid;
+  grid-template-rows: min-content min-content;
+}*/
 
 h1, h2, h3, h4, h5, h6 {font-family: 'Noto Serif'; }
 table { font-family: 'Noto Mono'; }

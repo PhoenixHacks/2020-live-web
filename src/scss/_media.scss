@@ -5,7 +5,7 @@
 #media {
   display: grid;
   grid-template-columns: min-content auto min-content;
-  grid-auto-rows: minmax(min-content, max-content);
+  grid-auto-rows: 300px;  //minmax(min-content, max-content);
   grid-gap: 20px;
   
   @media (max-width: map-get($screen-sizes, lg)) {
@@ -59,7 +59,7 @@
         margin: 0;
         //color: map-get($palette, text-variant-1); 
       }
-      h5 { margin: 0; }
+      h5 { margin: 0; white-space: nowrap; }
 
       @media (max-width: map-get($screen-sizes, sm)) {
         grid-area: 1 / 2;
@@ -81,7 +81,7 @@
     grid-auto-rows: min-content auto;
     background: map-get($palette, background-primary);
     border-radius: 6px;
-    height: $height;
+    //height: $height;
 
     @media (max-width: map-get($screen-sizes, lg)) {
       grid-area: 2 / span 2;

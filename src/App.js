@@ -14,16 +14,14 @@ class App extends React.Component {
     //TODO: add notifications for announcements
     //TODO: Fix issue with zoomed in on mobile
 
-    return (
-      <div>
-        <Header />
-        <div className="container" id="content">
-          <Media />
-          <Schedule />
-          <Maps />
-        </div>
+    return (<>
+      <Header />
+      <div className="container" id="content">
+        <Media />
+        <Schedule />
+        <Maps />
       </div>
-    );
+    </>);
   }
 }
 

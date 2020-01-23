@@ -10,9 +10,10 @@ const Header = () => (
       <span className="logo-text">
         <span className="capital">P</span>HOENIX
         <span className="capital">H</span>ACKS
-        <span className="live">LIVE</span>
+        <span className="live-inside">LIVE</span>
       </span>
     </a>
+    <span className="live-outside">LIVE</span>
     <Timer/>
   </div>
 )
