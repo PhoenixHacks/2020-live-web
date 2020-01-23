@@ -85,7 +85,6 @@ export default class Timer extends React.Component {
 
   render() {
     const { isLive, timer } = this.state;
-    //TODO: have timer count down until start and then switch to countdown until end.
 
     return (
       <div id="timer">

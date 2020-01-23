@@ -3,31 +3,29 @@ import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import events from "../services/events";
 
-//import {FaAngleDown, FaAngleUp} from 'react-icons/fa'
-//import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
 import { useMediaQuery } from 'react-responsive';
 
 const DescriptionRow = ({ event }) => {
   const isPhoneWide = useMediaQuery({ query: '(min-device-width: 480px)' });
 
   return !isPhoneWide ? (<>
-    <td colSpan="1"></td>
-    <td colSpan="2">
-      <tr>
-        <th className="small-location">Location</th>
-        <td rowSpan="2">{event.description}</td>
-      </tr>
-      <tr>
-        <td className="small-location">{event.location}</td>
-      </tr>
+    <td colSpan="3">
+      <table>
+        <tbody>
+          <tr>
+            <th className="small-location">Location</th>
+            <td rowSpan="2">{event.description}</td>
+          </tr>
+          <tr>
+            <td className="small-location">{event.location}</td>
+          </tr>
+        </tbody>
+      </table>
     </td></>
-  ) : (
-    <td colSpan="4">
-      <tr>
-        <td>{event.description}</td>
-      </tr>
-    </td>
-  )
+  ) : ( 
+  <td colSpan="4">
+    <p>{event.description}</p>
+  </td> )
 }
 
 export default class Schedule extends React.Component {
@@ -53,6 +51,14 @@ export default class Schedule extends React.Component {
     let { start, end } = event.time;
     let es = new Date(event.date + 'T' + start + 'Z');
     let ee = new Date(event.date + 'T' + end + 'Z');
+    let date;
+
+    if (end === '00:00:00') {
+      date = new Date(event.date);
+      //console.log(date);
+      date.setDate(date.getDate() + 1);
+      es = date;
+    }
 
     let ESToffset = 300; //Timezone offset for EST in minutes.
     let eventStart = new Date( es.getTime() + ESToffset*60*1000 );
@@ -62,6 +68,7 @@ export default class Schedule extends React.Component {
 
   getTimes(event) {
     let { eventStart, eventEnd } = this.getDates(event);
+    //(event.name === 'Werewolf') ? console.log(eventEnd) : console.log("");
     eventStart = eventStart.getTime();
     eventEnd = eventEnd.getTime();
 
@@ -119,19 +126,9 @@ export default class Schedule extends React.Component {
   }
 
   tableSection(datetext, tabEvents) {
-    //DONE: gray out (or remove?) past events
-    //DONE: indicate which events are currently active
-      //TODO - still not sure of the best method;
-            // currently have an animation that alternates color
-
-    //DONE: drop downs for the events (that show description)
-      //TODO - now I just need actual content for these dropdowns
-
-    //TODO: The active event will have it's dropdown activated.
-    //TODO: Put the past events into it's own tab.
-
-    //TODO: Move the location into the hidden dropdown
-      // when the screen becomes too small
+    //TODO: add content to the event dropdowns
+    //TODO: Refine the hidden location and content
+    //TODO: figure out why werewolf has expired when it should have yet
 
     let { now } = this.state;
     let dateFilteredEvents = tabEvents.filter(this.dateFilter(datetext));

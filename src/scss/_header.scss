@@ -51,12 +51,14 @@
         color: #a3f7bf;
         display: none;
 
-        @include mq('phone-wide') {
+        @include mq('phone') {
           display: inline;
         }
       }
     }
   }
+
+  a:hover { transform: scale(1.05, 1.05); }
 
   .live-outside {
     grid-row: 2;
@@ -65,7 +67,7 @@
     color: #a3f7bf;
     //display: inline;
 
-    @include mq('phone-wide') {
+    @include mq('phone') {
       display: none;
     }
   }
@@ -84,6 +86,8 @@
       width: 7em;
       font-family: 'Noto Mono';
       //font-size: 32px;
+
+      span:hover { transform: scale(1.05, 1.05); }
     }
 
     hr {

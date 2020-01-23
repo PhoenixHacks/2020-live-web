@@ -49,7 +49,10 @@
       text-align: left;
       padding: 10px;
       border: 1px solid map-get($palette, text-variant-1);
+      -webkit-transition: box-shadow linear .5s;
+      transition: box-shadow linear .5s;
       h5 { margin: 0; }
+      h5:hover { transform: scale(1.05, 1.05); }
 
       @include mq('phone') {
         grid-area: 2 / 1;
@@ -64,6 +67,8 @@
       grid-gap: .5rem;
       padding: 10px;
       border: 1px solid map-get($palette, text-variant-1);
+      -webkit-transition: box-shadow linear .5s;
+      transition: box-shadow linear .5s;
       h3 {
         margin: 0;
         //color: map-get($palette, text-variant-1); 
@@ -74,6 +79,10 @@
         grid-area: 1 / 1;
         border-radius: 6px 6px 0 0;
       }
+    }
+    #links:hover,
+    #wifi:hover {
+      //box-shadow: 0 0 5px map-get($palette, text-variant-1);
     }
     #radio {
       grid-area: 2 / span 2;
@@ -123,6 +132,8 @@
       //border: 1px solid map-get($palette, text-normal);
       background: map-get($palette, background-tertiary);
       color: map-get($palette, text-muted);
+      -webkit-transition: box-shadow linear .5s;
+      transition: box-shadow linear .5s;
 
       li {
         span {
@@ -130,6 +141,9 @@
           color: map-get($palette, text-normal);
         }
       }
+    }
+    ul:hover {
+      //box-shadow: 0 0 5px map-get($palette, text-variant-1);
     }
   }
 
@@ -175,6 +189,8 @@
       background: map-get($palette, background-secondary);
       border: 1px solid map-get($palette, text-variant-1);
       border-radius: 0 0 6px 6px;
+      -webkit-transition: box-shadow linear .5s;
+      transition: box-shadow linear .5s;
 
       grid-template: min-content min-content / auto;
       @include mq('phone-wide') {
@@ -199,6 +215,9 @@
         transform: scale(1.05, 1.05);
         background: map-get($palette, text-variant-1);
       }
+    }
+    #buttons:hover {
+      //box-shadow: 0 0 5px map-get($palette, text-variant-1);
     }
   }
 }

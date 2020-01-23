@@ -8,11 +8,7 @@ import Media from "./Components/Media";
 class App extends React.Component {
 
   render() {
-    //DONE: Add a helpful resources section.
-      //TODO: need to add content
-    //TODO: make the site thoroughly responsive
     //TODO: add notifications for announcements
-    //TODO: Fix issue with zoomed in on mobile
 
     return (<>
       <Header />

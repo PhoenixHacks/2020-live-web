@@ -63,16 +63,6 @@ export default class Announcements extends React.Component {
 
   render() {
     const { announcements } = this.state;
-    //DONE: white border around the announcements
-      //- experimented with different colors; not sure; need feedback
-    //DONE: fix issue with message being sent multiple times
-    //DONE: fix issue with content disappearing (timeout?)
-      //- I thought it was due to my SSH tunnel being poor but it
-      //  still happens locally so this is not solved yet
-      //- I believe this issue has been resolved and was caused by
-      //  the use of axios; the use of axios and socket.io should be seperate
-      //  axios is for REST API and socket.io is for websockets
-    //DONE: fix issue with unshift error
     //TODO: Maintain the scroll bar position when updating the chat.
 
     return (

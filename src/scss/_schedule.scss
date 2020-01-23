@@ -34,6 +34,7 @@
     .nav-link:hover {
       border: 1px solid map-get($palette, text-variant-1);
       color: map-get($palette, text-normal);
+      transform: scale(1.01, 1.01);
     }
 
     .active {
@@ -110,17 +111,30 @@
             display: none;
           }
         }
-        td.small-location {
-          border-bottom: 1px solid map-get($palette, text-muted);
-          text-align: center;
-        }
 
         tbody {
           tr:nth-child(odd) { background: #383838; }
-          tr:hover { color: #ddc5eb; background: #2c2c2c; }
+          tr:hover { 
+            color: #ddc5eb; 
+            background: #2c2c2c;
+          }
           
           tr#dropdown {
             background-color: map-get($palette, background-tertiary);
+            td {
+              padding: 5px;
+            }
+            td p {
+              background-color: map-get($palette, background-primary);
+              border-top: 1px solid #dee2e6;
+              border-left: 1px solid #72767d;
+              padding: 5px;
+              margin: 0;
+            }
+            table td {
+              background-color: map-get($palette, background-primary);
+              text-align: center;
+            }
           }
           tr.hiddenRow {
             display: none;
