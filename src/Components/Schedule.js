@@ -3,10 +3,35 @@ import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import events from "../services/events";
 
-import {FaAngleDown, FaAngleUp} from 'react-icons/fa'
+//import {FaAngleDown, FaAngleUp} from 'react-icons/fa'
+//import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import { useMediaQuery } from 'react-responsive';
+
+const DescriptionRow = ({ event }) => {
+  const isPhoneWide = useMediaQuery({ query: '(min-device-width: 480px)' });
+
+  return !isPhoneWide ? (<>
+    <td colSpan="1"></td>
+    <td colSpan="2">
+      <tr>
+        <th className="small-location">Location</th>
+        <td rowSpan="2">{event.description}</td>
+      </tr>
+      <tr>
+        <td className="small-location">{event.location}</td>
+      </tr>
+    </td></>
+  ) : (
+    <td colSpan="4">
+      <tr>
+        <td>{event.description}</td>
+      </tr>
+    </td>
+  )
+}
 
 export default class Schedule extends React.Component {
-  state = { now: null, showExpiredEvents: false };
+  state = { now: null };
 
   //===Clock====================================================================
 
@@ -19,7 +44,8 @@ export default class Schedule extends React.Component {
 
   tagFilter = (tag) => (event) => event.tags.includes(tag);
   dateFilter = (date) => (event) => event.date === date;
-  removeStatusFilter = (status, now) => (event) => this.eventStatus(event, now).status !== status;
+  statusFilter = (status, now) => (event) => this.eventStatus(event, now).status === status;
+  statusRemovalFilter = (status, now) => (event) => this.eventStatus(event, now).status !== status;
 
   //===Formatting===============================================================
 
@@ -92,20 +118,6 @@ export default class Schedule extends React.Component {
     }
   }
 
-  toggleExpiredEvents(events) {
-    let showExpiredEvents = this.state.showExpiredEvents
-    this.setState({ showExpiredEvents: !showExpiredEvents });
-  }
-
-  toggleEventsArrow() {
-    let showExpiredEvents = this.state.showExpiredEvents;
-    if (showExpiredEvents) {
-      return <FaAngleDown onClick={ () => this.toggleExpiredEvents() }/>;
-    } else {
-      return <FaAngleUp onClick={ () => this.toggleExpiredEvents() }/>
-    }
-  }
-
   tableSection(datetext, tabEvents) {
     //DONE: gray out (or remove?) past events
     //DONE: indicate which events are currently active
@@ -118,16 +130,11 @@ export default class Schedule extends React.Component {
     //TODO: The active event will have it's dropdown activated.
     //TODO: Put the past events into it's own tab.
 
-    let { now, showExpiredEvents } = this.state;
-    let dateFilteredEvents, statusFilteredEvents;
+    //TODO: Move the location into the hidden dropdown
+      // when the screen becomes too small
 
-    if (showExpiredEvents) {
-      dateFilteredEvents = tabEvents.filter(this.dateFilter(datetext));
-    } else {
-      statusFilteredEvents = tabEvents.filter(this.removeStatusFilter('expired', now))
-      dateFilteredEvents = statusFilteredEvents.filter(this.dateFilter(datetext));
-    }
-
+    let { now } = this.state;
+    let dateFilteredEvents = tabEvents.filter(this.dateFilter(datetext));
     
     if (dateFilteredEvents && dateFilteredEvents.length) {
       return (
@@ -137,9 +144,9 @@ export default class Schedule extends React.Component {
             <thead>
               <tr>
                 <th style={{width: "0.6%"}} className="indicator"></th>
-                <th style={{width: "24.7%"}}>Time</th>
-                <th style={{width: "auto"}}>Event/Activity {/* this.toggleEventsArrow() */}</th>
-                <th style={{width: "24.7%"}}>Location</th>
+                <th style={{width: "25%"}}>Time</th>
+                <th style={{width: "auto"}}>Event</th>
+                <th style={{width: "24.7%"}} className="large-location">Location</th>
               </tr>
             </thead>
             <tbody>
@@ -149,10 +156,10 @@ export default class Schedule extends React.Component {
                   <td id={ this.isActive(event, now).id } className="indicator"></td>
                   <th>{this.formatTimes(event)}</th>
                   <td>{event.name}</td>
-                  <td>{event.location}</td>
+                  <td className="large-location">{event.location}</td>
                 </tr>
                 <tr name={event.name} className="hiddenRow" id="dropdown">
-                  <td colSpan="4">{event.description}</td>
+                  <DescriptionRow event={event}/>
                 </tr>
               </>))}
             </tbody>
@@ -173,16 +180,22 @@ export default class Schedule extends React.Component {
   }
 
   render() {
-    const logistics = events.filter(this.tagFilter("logistics"));
-    const meals = events.filter(this.tagFilter("meal"));
-    const workshops = events.filter(this.tagFilter("workshop"));
-    const activities = events.filter(this.tagFilter("activity"));
+    let { now } = this.state;
 
+    const nonExpiredEvents = events.filter(this.statusRemovalFilter('expired', now));
+
+    const logistics = nonExpiredEvents.filter(this.tagFilter("logistics"));
+    const meals = nonExpiredEvents.filter(this.tagFilter("meal"));
+    const workshops = nonExpiredEvents.filter(this.tagFilter("workshop"));
+    const activities = nonExpiredEvents.filter(this.tagFilter("activity"));
+
+    const expiredEvents = events.filter(this.statusFilter('expired', now));
+    
     return (
       <div id="schedule">
         <Tabs defaultActiveKey="all-events">
-          <Tab eventKey="all-events" title="All Events">
-            {this.renderTab(events)}
+          <Tab eventKey="all-events" title="General">
+            {this.renderTab(nonExpiredEvents)}
           </Tab>
           <Tab eventKey="logistics" title="Logistics">
             {this.renderTab(logistics)}
@@ -195,6 +208,9 @@ export default class Schedule extends React.Component {
           </Tab>
           <Tab eventKey="activities" title="Activities">
             {this.renderTab(activities)}
+          </Tab>
+          <Tab eventKey="expired-events" title="Expired">
+            {this.renderTab(expiredEvents)}
           </Tab>
         </Tabs>
       </div>

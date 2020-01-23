@@ -11,15 +11,16 @@
     display: grid;
     grid-gap: 5px;
     border: 1px solid map-get($palette, text-variant-1);
+    border-bottom: none;
     background-color: map-get($palette, background-secondary);
-    padding: 5px;
+    padding: 10px 10px 0 10px;
 
     grid-template: repeat(3, min-content) / repeat(2, 1fr);
     @include mq('phone') {
       grid-template: repeat(2, min-content) / repeat(3, 1fr);
     }
-    @include mq('tablet') {
-      grid-template: auto / repeat(5, min-content) auto;
+    @include mq('tablet-wide') {
+      grid-template: auto / repeat(6, auto);
     }
 
     .nav-link {
@@ -71,11 +72,11 @@
           border-color: map-get($palette, text-muted);
           vertical-align: middle;
 
-          padding: 0;
+          padding: 2px;
           border-left: 1px solid map-get($palette, text-muted);
 
-          @include mq('phone-wide') {
-            padding: 5px 0 5px 0;
+          @include mq('phone') {
+            padding: 5px;
           }
           @include mq('phone-wide') {
             padding: .75rem;
@@ -86,11 +87,32 @@
         .indicator {
           padding: 0;
           margin: 0;
-          width: 2%;
+          width: 3%;
 
           @include mq('phablet') {
-            width: 0.6%;
+            width: 2%;
           }
+          @include mq('tablet-wide') {
+            width: 1%;
+          }
+        }
+
+        .large-location {
+          display: none !important;
+
+          @include mq('phone-wide') {
+            display: table-cell !important;
+          }
+        }
+
+        .small-location {
+          @include mq('phone-wide') {
+            display: none;
+          }
+        }
+        td.small-location {
+          border-bottom: 1px solid map-get($palette, text-muted);
+          text-align: center;
         }
 
         tbody {
@@ -98,7 +120,7 @@
           tr:hover { color: #ddc5eb; background: #2c2c2c; }
           
           tr#dropdown {
-            background-color: map-get($palette, background-quaternary);
+            background-color: map-get($palette, background-tertiary);
           }
           tr.hiddenRow {
             display: none;
