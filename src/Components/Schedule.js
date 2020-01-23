@@ -138,7 +138,7 @@ export default class Schedule extends React.Component {
               <tr>
                 <th style={{width: "0.6%"}} className="indicator"></th>
                 <th style={{width: "24.7%"}}>Time</th>
-                <th style={{width: "50%"}}>Event/Activity { this.toggleEventsArrow() }</th>
+                <th style={{width: "auto"}}>Event/Activity {/* this.toggleEventsArrow() */}</th>
                 <th style={{width: "24.7%"}}>Location</th>
               </tr>
             </thead>

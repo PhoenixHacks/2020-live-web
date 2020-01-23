@@ -9,20 +9,30 @@
 
   .nav {
     display: grid;
-    grid-template-columns: repeat(5, min-content) auto;
-    border-bottom: 1px solid map-get($palette, text-variant-1);
+    grid-gap: 5px;
+    border: 1px solid map-get($palette, text-variant-1);
+    background-color: map-get($palette, background-secondary);
+    padding: 5px;
+
+    grid-template: repeat(3, min-content) / repeat(2, 1fr);
+    @include mq('phone') {
+      grid-template: repeat(2, min-content) / repeat(3, 1fr);
+    }
+    @include mq('tablet') {
+      grid-template: auto / repeat(5, min-content) auto;
+    }
 
     .nav-link {
       white-space: nowrap;
+      text-align: center;
+      border: 1px solid map-get($palette, text-normal);
+      background-color: map-get($palette, background-primary);
+      border-radius: 0;
     }
 
     .nav-link:hover {
       border: 1px solid map-get($palette, text-variant-1);
       color: map-get($palette, text-normal);
-    }
-
-    .nav-link:focus {
-      outline: none;
     }
 
     .active {
@@ -43,6 +53,7 @@
 
     #day {
       border: 1px solid map-get($palette, text-normal);
+      //overflow-x: scroll;
 
       h3 {
         margin: 0;
@@ -55,17 +66,31 @@
       table {
         color: map-get($palette, text-normal);
         margin: 0;
-        border-collapse: collapse;
-        empty-cells: show;
 
         th, td {
           border-color: map-get($palette, text-muted);
           vertical-align: middle;
+
+          padding: 0;
+          border-left: 1px solid map-get($palette, text-muted);
+
+          @include mq('phone-wide') {
+            padding: 5px 0 5px 0;
+          }
+          @include mq('phone-wide') {
+            padding: .75rem;
+            border-left: none;
+          }
         }
 
         .indicator {
           padding: 0;
           margin: 0;
+          width: 2%;
+
+          @include mq('phablet') {
+            width: 0.6%;
+          }
         }
 
         tbody {
@@ -83,26 +108,6 @@
             position: relative;
             font-style: italic;
             color: map-get($palette, text-muted);
-            //display: none;
-
-            /*
-            th, td { position: relative; }
-          
-            th:before,
-            td:before {
-              content: " ";
-              position: absolute;
-              top: 50%;
-              left: 0;
-              border-bottom: 1px solid map-get($palette, text-muted);
-              width: 100%;
-            }
-
-            th:after,
-            td:after {
-              content: "\00B7";
-              font-size: 1px;
-            }*/
           }
 
           td#greenlight { background-color: #a9cf54; }

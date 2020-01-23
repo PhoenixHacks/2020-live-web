@@ -35,25 +35,14 @@ $screen-sizes: (
 );
 
 * {
-  //box-sizing: border-box;
-  //padding: 0;
-  //margin: 0;
-  min-width: 0;
+  //min-width: 0;
 }
 
 body {
   font: 100% $font-stack;
   background: map-get($palette, background-tertiary);
   color: map-get($palette, text-normal);
-  //display: table;
-  //width: 100%;
 }
-/*
-#root {
-  width: 100%;
-  display: grid;
-  grid-template-rows: min-content min-content;
-}*/
 
 h1, h2, h3, h4, h5, h6 {font-family: 'Noto Serif'; }
 table { font-family: 'Noto Mono'; }
@@ -70,8 +59,38 @@ hr {
   margin: 0;
 }
 
-/*
 *:focus {
   box-shadow: none !important;
   outline: 0 !important;
-}*/
+}
+
+$breakpoints: (
+    "phone-small":  375px,
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  992px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+      $width: map_get($breakpoints, $width);
+      @if $type == max {
+          $width: $width - 1px;
+      }
+      @media only screen and (#{$type}-width: $width) {
+          @content;
+      }
+  }
+}
+
+/* example
+@include mq('tablet-wide') {
+        padding-top: 4rem;
+        font-size: 2.4rem;
+    }
+*/

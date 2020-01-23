@@ -40,13 +40,15 @@ const Radio = () => (
 
 const Resources = () => (
   <div id="resources">
-    <h3>RESOURCES</h3>
-    <a href="https://github.com/dipakkr/A-to-Z-Resources-for-Students" target="_blank" rel="noopener noreferrer">
-      <button>A-to-Z-Resources-for-Students</button>
-    </a>
-    <a href="https://github.com/sahat/hackathon-starter" target="_blank" rel="noopener noreferrer">
-      <button>Hackathon-Starter</button>
-    </a>
+    <h2>RESOURCES</h2>
+    <div id="buttons">
+      <a href="https://github.com/dipakkr/A-to-Z-Resources-for-Students" target="_blank" rel="noopener noreferrer">
+        <button>Resources for Students</button>
+      </a>
+      <a href="https://github.com/sahat/hackathon-starter" target="_blank" rel="noopener noreferrer">
+        <button>Hackathon Starter</button>
+      </a>
+    </div>
   </div>
 )
 

@@ -5,34 +5,38 @@
 #header {
   display: grid;
   text-align: center;
+  grid-template-rows: repeat(min-content);
   padding: 10px;
   background-color: map-get($palette, background-quaternary);
   color: map-get($palette, text-normal);
   //box-shadow: 0 0 1px rgba(0,0,0,0.12), 0 0 1px rgba(0,0,0,0.24);
 
   a {
+    //TODO: Clean up this section.
     grid-row: 1;
     display: grid;
-    grid-gap: 5px;
-    grid-template-columns: auto min-content min-content auto;
+    grid-column-gap: 5px;
+    grid-template-columns: min-content min-content;
+    margin: auto;
+    grid-template-rows: min-content;
     $size: 4rem;
-    height: $size;
     //font-size: $size;
 
-    @media (max-width: map-get($screen-sizes, xs)) {
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: minmax(0, auto) min-content min-content minmax(0, auto);
+    @include mq('phone-wide') {
+      //grid-template-columns: auto min-content min-content auto;
     }
 
     img {
       grid-area: 1 / 2;
-      // figure out responsive image height just like rfs for font-size
-      height: inherit;
+      //DONE: figure out responsive image height just like rfs for font-size
+      height: 100%;
+      margin: auto;
     }
 
     .logo-text {
       grid-area: 1 / 3;
       font-family: 'PhoenixHacks', sans-serif;
+      margin-top: auto;
       @include font-size(48px);
       //font-size: 3rem;
 
@@ -45,9 +49,10 @@
         @include font-size(48px);
         font-family: $font-stack;
         color: #a3f7bf;
+        display: none;
 
-        @media (max-width: map-get($screen-sizes, xs)) {
-          display: none;
+        @include mq('phone-wide') {
+          display: inline;
         }
       }
     }
@@ -58,18 +63,18 @@
     @include font-size(48px);
     font-family: $font-stack;
     color: #a3f7bf;
-    display: none;
+    //display: inline;
 
-    @media (max-width: map-get($screen-sizes, xs)) {
-      display: grid;
+    @include mq('phone-wide') {
+      display: none;
     }
   }
 
   #timer {
-    grid-row: 2;
+    grid-row: 3;
     
-    @media (max-width: map-get($screen-sizes, xs)) {
-      grid-row: 3;
+    @include mq('phone-wide') {
+      grid-row: 2;
     }
 
     h1 { 

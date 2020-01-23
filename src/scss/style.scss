@@ -7,12 +7,16 @@
 
 #content {
   display: grid;
-  grid-gap: 40px;
-  padding: 40px;
+  grid-gap: 15px;
+  padding: 15px;
   background: map-get($palette, background-secondary);
 
-  @media (max-width: map-get($screen-sizes, sm)) {
-    padding: 15px;
+  @include mq('phablet') {
+    padding: 40px;
+    grid-gap: 20px;
+  }
+  @include mq('tablet-wide') {
+    grid-gap: 40px;
   }
 
   // drop shadow illusion for header
