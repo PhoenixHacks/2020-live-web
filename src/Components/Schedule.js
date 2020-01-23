@@ -3,28 +3,25 @@ import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import events from "../services/events";
 
+import {FaAngleDown} from 'react-icons/fa'
+
 export default class Schedule extends React.Component {
   state = { now: null };
 
+  //===Clock====================================================================
+
   componentDidMount = () => this.time();
+  time = () => setInterval( () => {
+    this.setState({ now: new Date().getTime() }); 
+  }, 1000);
 
-  time = () => {
-    return setInterval(() => {
-      this.setState({ now: new Date().getTime() });
-    }, 1000);
-  };
+  //===Filters==================================================================
 
-  tagFilter(tag) {
-    return function(event) {
-      return event.tags.includes(tag);
-    }
-  }
+  tagFilter = (tag) => (event) => event.tags.includes(tag);
+  dateFilter = (date) => (event) => event.date === date;
+  removeStatusFilter = (status) => (event) => this.eventStatus(event, now) !== status;
 
-  dateFilter(date) {
-    return function(event) {
-      return event.date === date;
-    }
-  }
+  //===Formatting===============================================================
 
   getDates(event) {
     let { start, end } = event.time;
@@ -45,17 +42,12 @@ export default class Schedule extends React.Component {
     return { eventStart, eventEnd };
   }
 
-  eventStatus(event, now) {
-    let { eventStart, eventEnd } = this.getTimes(event);
-    return (now > eventStart && now < eventEnd) ? "Active"
-      : (now > eventEnd) ? "expired" : "";
-  }
-
   formatTime(time) {
     let minute = ("0" + time.getMinutes()).slice(-2);
     let hour = time.getHours();
     let meridian = 'AM';
     if (hour === 0) { hour = 12 }
+    else if (hour === 12) { meridian = 'PM'; }
     else if (hour > 12) { hour -= 12; meridian = 'PM'; }
     hour = ("0" + hour).slice(-2);
 
@@ -74,13 +66,6 @@ export default class Schedule extends React.Component {
     }
   }
 
-  dropDown(name) {
-    let rows = document.getElementsByName(name);
-    for (let i=0; i < rows.length; i++) {
-      rows[i].className = (rows[i].className === "hiddenRow") ? "" : "hiddenRow";
-    }
-  }
-
   formatDateText(datetext) {
     let date = new Date(datetext + 'T12:00:00Z');
     let weekday = date.toLocaleString('en-US', { weekday: 'long'});
@@ -90,21 +75,45 @@ export default class Schedule extends React.Component {
     return weekday + ', ' + month + ' ' + monthday;
   }
 
+  //===States==================================================================
+
+  eventStatus(event, now) {
+    let { eventStart, eventEnd } = this.getTimes(event);
+    /*
+    return (now > eventStart && now < eventEnd) ?  { class: "Active", id: "greenlight" }
+      : (now > eventEnd) ? { class: "expired", id: "redlight" } : { class: "", id: "" };*/
+    /*
+      return (now > eventStart && now < eventEnd) ?  { class: "", id: "greenlight" }
+      : (now > eventEnd) ? { class: "expired", id: "" } : { class: "", id: "" };*/
+    return (now > eventStart && now < eventEnd) ? { status: 'active' }
+    : (now > eventEnd) ? { status: 'expired'} : { status: 'normal' }
+  }
+
+  dropDown(name) {
+    let rows = document.getElementsByName(name);
+    for (let i=0; i < rows.length; i++) {
+      rows[i].className = (rows[i].className === "hiddenRow") ? "" : "hiddenRow";
+    }
+  }
+
   tableSection(datetext, tabEvents) {
-    //TODO: reconsider the entire schedule design?
     //DONE: gray out (or remove?) past events
-      //TODO - currently utilizing strikethrough
     //DONE: indicate which events are currently active
       //TODO - still not sure of the best method;
             // currently have an animation that alternates color
+
     //DONE: drop downs for the events (that show description)
       //TODO - now I just need actual content for these dropdowns
+
     //DONE: make AM and PM capital letters
     //DONE: make border and tab purple with white text
-      //TODO - need feedback
     //DONE: add a vertical indicator at the beginning of certain rows
+    //TODO: The active event will have it's dropdown activated.
+    //DONE: Fix the 12:00AM --> 12:00PM
+    //TODO: Put the past events into it's own tab.
 
     let { now } = this.state;
+    let statusFilteredEvents = tabEvents.filter(this.removeStatusFilter('expired'))
     let dateFilteredEvents = tabEvents.filter(this.dateFilter(datetext));
 
     
@@ -117,15 +126,16 @@ export default class Schedule extends React.Component {
               <tr>
                 <th style={{width: "0.6%"}} className="indicator"></th>
                 <th style={{width: "24.7%"}}>Time</th>
-                <th style={{width: "50%"}}>Event/Activity</th>
+                <th style={{width: "50%"}}>Event/Activity <FaAngleDown id="dropdown-arrow"/></th>
                 <th style={{width: "24.7%"}}>Location</th>
               </tr>
             </thead>
             <tbody>
               {dateFilteredEvents.map((event, index) => (<>
                 <tr key={event.name} onClick={ () => this.dropDown(event.name) }
-                  className={ this.eventStatus(event, now) }>
-                  <td id={event.tags[1]} className="indicator"></td>
+                  className={ this.eventStatus(event, now).class }>
+                  {/*<td id={event.tags[1]} className="indicator"></td>*/}
+                  <td id={ this.eventStatus(event, now).id } className="indicator"></td>
                   <th>{this.formatTimes(event)}</th>
                   <td>{event.name}</td>
                   <td>{event.location}</td>

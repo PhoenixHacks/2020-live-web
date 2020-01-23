@@ -12,6 +12,7 @@
 
     .nav-link:hover {
       border: 1px solid map-get($palette, text-variant-1);
+      color: map-get($palette, text-normal);
     }
 
     .nav-link:focus {
@@ -74,6 +75,11 @@
 
           tr.expired {
             position: relative;
+            font-style: italic;
+            color: map-get($palette, text-muted);
+            //display: none;
+
+            /*
             th, td { position: relative; }
           
             th:before,
@@ -82,7 +88,7 @@
               position: absolute;
               top: 50%;
               left: 0;
-              border-bottom: 1px solid map-get($palette, text-normal);
+              border-bottom: 1px solid map-get($palette, text-muted);
               width: 100%;
             }
 
@@ -90,7 +96,7 @@
             td:after {
               content: "\00B7";
               font-size: 1px;
-            }
+            }*/
           }
 
           td#greenlight { background-color: #a9cf54; }

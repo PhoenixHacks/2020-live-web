@@ -12,6 +12,7 @@ class App extends React.Component {
       //TODO: need to add content
     //TODO: make the site thoroughly responsive
     //TODO: add notifications for announcements
+    //TODO: Fix issue with zoomed in on mobile
 
     return (
       <div>

@@ -1,6 +1,9 @@
 {
   "name": "2020-live-web",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "The live web app for PhoenixHacks 2020.",
+  "author": "Justin McGettigan",
+  "homepage": "https://live.phoenixhacks.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
@@ -41,6 +44,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "homepage": "https://live.phoenixhacks.com"
+  ]
 }

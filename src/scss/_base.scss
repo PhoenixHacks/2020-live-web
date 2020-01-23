@@ -45,6 +45,18 @@ body {
 h1, h2, h3, h4, h5, h6 {font-family: 'Noto Serif'; }
 table { font-family: 'Noto Mono'; }
 
+a, a:hover {
+  text-decoration: none;
+  color: inherit;
+} a:hover {
+  color: map-get($palette, text-variant-1)
+}
+
+hr {
+  background: map-get($palette, background-secondary);
+  margin: 0;
+}
+
 /*
 *:focus {
   box-shadow: none !important;

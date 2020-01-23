@@ -73,6 +73,7 @@ export default class Announcements extends React.Component {
       //  the use of axios; the use of axios and socket.io should be seperate
       //  axios is for REST API and socket.io is for websockets
     //DONE: fix issue with unshift error
+    //TODO: Maintain the scroll bar position when updating the chat.
 
     return (
       <div id="announcements">
