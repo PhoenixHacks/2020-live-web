@@ -17,7 +17,7 @@ const DescriptionRow = ({ event }) => {
             <td rowSpan="2">{event.description}</td>
           </tr>
           <tr>
-            <td className="small-location">{event.location}</td>
+            <td className="small-location">{ (event.location.length > 0) ? event.location : "N/A"}</td>
           </tr>
         </tbody>
       </table>

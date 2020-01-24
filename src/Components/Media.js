@@ -19,7 +19,7 @@ const Links = () => (
     {/* For media use something like google photos album or a social media page. */}
     <Link text={"Media"} icon={<FaImages/>} link={"https://phoenixhacks.com/media"}/>
     <Link text={"FAQ"} icon={<i className="fa fa-question-circle" aria-hidden="true"></i>} 
-      link={"https://phoenixhacks.com#FAQ"}/>
+      link={"https://phoenixhacks.com#faq"}/>
   </div>
 )
 
@@ -43,7 +43,7 @@ const Resources = () => (
     <h2>RESOURCES</h2>
     <div id="buttons">
       <a href="https://github.com/dipakkr/A-to-Z-Resources-for-Students" target="_blank" rel="noopener noreferrer">
-        <button>Resources for Students</button>
+        <button>Student Resources</button>
       </a>
       <a href="https://github.com/sahat/hackathon-starter" target="_blank" rel="noopener noreferrer">
         <button>Hackathon Starter</button>
