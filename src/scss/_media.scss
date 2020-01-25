@@ -51,7 +51,7 @@
       border: 1px solid map-get($palette, text-variant-1);
       -webkit-transition: box-shadow linear .5s;
       transition: box-shadow linear .5s;
-      h5 { margin: 0; }
+      h5 { margin: auto auto auto 0; }
       h5:hover { transform: scale(1.05, 1.05); }
 
       @include mq('phone') {
@@ -70,10 +70,10 @@
       -webkit-transition: box-shadow linear .5s;
       transition: box-shadow linear .5s;
       h3 {
-        margin: 0;
+        margin: auto;
         //color: map-get($palette, text-variant-1); 
       }
-      h5 { margin: 0; white-space: nowrap; }
+      h5 { margin: auto; white-space: nowrap; }
 
       @include mq('phone') {
         grid-area: 1 / 1;
@@ -92,7 +92,7 @@
   }
 
   #announcements {
-    height: 300px;
+    height: 100%;
     grid-row: 1;
     display: grid;
     padding: 0 10px 10px 10px;
@@ -175,6 +175,7 @@
       font-weight: bold;
       font-size: 1.65rem;
       margin: 0;
+      white-space: nowrap;
 
       @include mq('phone-small') {
         font-size: 2rem;
@@ -192,12 +193,18 @@
       -webkit-transition: box-shadow linear .5s;
       transition: box-shadow linear .5s;
 
-      grid-template: min-content min-content / auto;
+      grid-template: min-content / auto auto;
+      @include mq('phone') {
+        grid-template: min-content / auto;
+      }
       @include mq('phone-wide') {
-        grid-template: min-content / auto auto;
+        grid-template: min-content min-content auto / auto auto;
+      }
+      @include mq('tablet') {
+        grid-template: min-content / auto auto auto auto;
       }
       @include mq('tablet-wide') {
-        grid-template: min-content min-content auto / auto;
+        grid-template: min-content min-content auto / auto auto;
       }
 
       button {

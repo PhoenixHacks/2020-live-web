@@ -10,6 +10,7 @@
   display: grid;
   grid-gap: 15px;
   padding: 15px;
+  grid-template-rows: min-content;
   background: map-get($palette, background-secondary);
 
   @include mq('phablet') {
