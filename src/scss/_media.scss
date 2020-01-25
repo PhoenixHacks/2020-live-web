@@ -69,7 +69,7 @@
         //border-radius: 0 0 6px 6px;
         //text-align: center;
       }
-      @include mq('tablet-wide') {
+      @include mq('tablet') {
         grid-area: 2 / 1;
         border-radius: 0 0 6px 6px;
       }
@@ -93,7 +93,7 @@
         //grid-area: 1 / 1;
         //border-radius: 6px 6px 0 0;
       }
-      @include mq('tablet-wide') {
+      @include mq('tablet') {
         grid-area: 1 / 1;
         border-radius: 6px 6px 0 0;
       }
