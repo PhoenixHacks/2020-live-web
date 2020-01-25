@@ -61,7 +61,7 @@ const events = [
     "description": "Event-long scavenger hunt info meeting. First place wins a prize!"
   },
   {
-    "name": "Lunch-Chick-Fil-A",
+    "name": "Lunch - Chick-Fil-A",
     "date": "2020-01-25",
     "time": {
       "start": "13:00:00",
@@ -138,7 +138,7 @@ const events = [
     "description": "Take a break from the hacking and learn the shuffle dance."
   },
   {
-    "name": "Dinner-Dominos",
+    "name": "Dinner - Dominos",
     "date": "2020-01-25",
     "time": {
       "start": "19:00:00",
@@ -226,7 +226,7 @@ const events = [
     "description": "Play a tech-themed Team Jeopardy for a chance to win a small prize."
   },
   {
-    "name": "Breakfast-Dunkin Donuts",
+    "name": "Breakfast - Dunkin Donuts",
     "date": "2020-01-26",
     "time": {
       "start": "08:00:00",
