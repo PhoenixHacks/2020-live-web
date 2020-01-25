@@ -28,7 +28,7 @@ const Wifi = () => (
   <div id="wifi">
     <h3><i className="fa fa-wifi"></i> WiFi</h3>
     <h5>Poly_Guest</h5>
-    <h5>Login Page</h5>
+    <h5>Poly_Secure</h5>
   </div>
 )
 

@@ -35,7 +35,7 @@
 
     @include mq('phone') {
       grid-gap: .5rem 0;
-      grid-template-columns: auto;
+      //grid-template-columns: auto;
     }
     @include mq('tablet') {
       grid-area: 1 / 1;
@@ -51,13 +51,25 @@
       border: 1px solid map-get($palette, text-variant-1);
       -webkit-transition: box-shadow linear .5s;
       transition: box-shadow linear .5s;
-      h5 { margin: auto auto auto 0; }
+      h5 { 
+        margin: auto auto auto 0; 
+        white-space: nowrap; 
+        @include mq('phone') {
+          margin: auto;
+        }
+        @include mq('tablet') {
+          margin: auto auto auto 0; 
+        }
+      }
       h5:hover { transform: scale(1.05, 1.05); }
 
       @include mq('phone') {
-        grid-area: 2 / 1;
-        border-radius: 0 0 6px 6px;
-        text-align: left;
+        //grid-area: 2 / 1;
+        //border-radius: 0 0 6px 6px;
+        text-align: center;
+      }
+      @include mq('phone-wide') {
+        //text-align: left;
       }
     }
     #wifi {
@@ -76,8 +88,8 @@
       h5 { margin: auto; white-space: nowrap; }
 
       @include mq('phone') {
-        grid-area: 1 / 1;
-        border-radius: 6px 6px 0 0;
+        //grid-area: 1 / 1;
+        //border-radius: 6px 6px 0 0;
       }
     }
     #links:hover,
@@ -101,7 +113,7 @@
     border-radius: 6px;
 
     @include mq('phone') {
-      grid-area: 1 / span 2;
+      //grid-area: 1 / span 2;
     }
     @include mq('tablet') {
       grid-area: 1 / 2;
@@ -158,7 +170,7 @@
 
     @include mq('phone') {
       //grid-template: repeat(3, min-content) auto / auto;
-      grid-area: 2 / 2;
+      //grid-area: 2 / 2;
     }
     @include mq('tablet') {
       grid-area: 2 / span 2;
@@ -195,7 +207,7 @@
 
       grid-template: min-content / auto auto;
       @include mq('phone') {
-        grid-template: min-content / auto;
+        //grid-template: min-content / auto;
       }
       @include mq('phone-wide') {
         grid-template: min-content min-content auto / auto auto;
