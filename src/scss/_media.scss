@@ -34,11 +34,12 @@
     border-radius: 6px;
 
     @include mq('phone') {
-      grid-gap: .5rem 0;
+      //grid-gap: .5rem 0;
       //grid-template-columns: auto;
     }
     @include mq('tablet') {
       grid-area: 1 / 1;
+      grid-gap: 10px 0;
     }
 
     #links {
@@ -66,10 +67,11 @@
       @include mq('phone') {
         //grid-area: 2 / 1;
         //border-radius: 0 0 6px 6px;
-        text-align: center;
+        //text-align: center;
       }
-      @include mq('phone-wide') {
-        //text-align: left;
+      @include mq('tablet-wide') {
+        grid-area: 2 / 1;
+        border-radius: 0 0 6px 6px;
       }
     }
     #wifi {
@@ -90,6 +92,10 @@
       @include mq('phone') {
         //grid-area: 1 / 1;
         //border-radius: 6px 6px 0 0;
+      }
+      @include mq('tablet-wide') {
+        grid-area: 1 / 1;
+        border-radius: 6px 6px 0 0;
       }
     }
     #links:hover,
