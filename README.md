@@ -1,4 +1,5 @@
-# [PhoenixHacks 2020 Live Site](https://live.phoenixhacks.com)
+<a href="https://live.phoenixhacks.com"><img src="https://github.com/PhoenixHacks.png?size=100" title="PhoenixHacks Live" alt="PhoenixHacks Live"></a>
+# PhoenixHacks 2020 Live Site
 
 > A web app live site built for PhoenixHacks (Spring 2020).
 >
