@@ -7,7 +7,7 @@
 const events = [
   {
     "name": "Check-In",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "09:00:00",
       "end": "11:00:00"
@@ -18,7 +18,7 @@ const events = [
   },
   {
     "name": "Opening Ceremony",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "11:00:00",
       "end": "12:00:00",
@@ -29,7 +29,7 @@ const events = [
   },
   {
     "name": "Hacking Begins",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "12:00:00",
       "end": "12:00:00",
@@ -40,7 +40,7 @@ const events = [
   },
   {
     "name": "Ice Breaker",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "12:00:00",
       "end": "13:00:00",
@@ -51,7 +51,7 @@ const events = [
   },
   {
     "name": "Scavenger Hunt",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "12:00:00",
       "end": "13:00:00",
@@ -62,7 +62,7 @@ const events = [
   },
   {
     "name": "Lunch - Chick-Fil-A",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "13:00:00",
       "end": "14:00:00",
@@ -73,7 +73,7 @@ const events = [
   },
   {
     "name": "Embedded Systems (Section 1)",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "14:00:00",
       "end": "14:45:00",
@@ -84,7 +84,7 @@ const events = [
   },
   {
     "name": "Introduction to Collaboration using Git and GitHub",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "15:00:00",
       "end": "15:45:00",
@@ -95,7 +95,7 @@ const events = [
   },
   {
     "name": "Embedded Systems (Section 2)",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "16:00:00",
       "end": "16:45:00",
@@ -106,7 +106,7 @@ const events = [
   },
   {
     "name": "Arduino Workshop",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "17:00:00",
       "end": "17:45:00",
@@ -117,7 +117,7 @@ const events = [
   },
   {
     "name": "Gaming with Azure",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "18:00:00",
       "end": "18:30:00",
@@ -128,7 +128,7 @@ const events = [
   },
   {
     "name": "Shuffle Class",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "18:15:00",
       "end": "19:00:00",
@@ -139,7 +139,7 @@ const events = [
   },
   {
     "name": "Dinner - Dominos",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "19:00:00",
       "end": "20:00:00",
@@ -150,7 +150,7 @@ const events = [
   },
   {
     "name": "Interfacing APIs with Python",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "20:00:00",
       "end": "21:00:00",
@@ -161,7 +161,7 @@ const events = [
   },
   {
     "name": "CTF Challenge",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "21:00:00",
       "end": "22:00:00",
@@ -172,7 +172,7 @@ const events = [
   },
   {
     "name": "Cup Stacking",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "22:00:00",
       "end": "23:00:00",
@@ -183,7 +183,7 @@ const events = [
   },
   {
     "name": "Werewolf",
-    "date": "2020-01-25",
+    "date": "2020-08-06",
     "time": {
       "start": "23:00:00",
       "end": "24:00:00",
@@ -194,7 +194,7 @@ const events = [
   },
   {
     "name": "Midnight Snack",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "00:00:00",
       "end": "01:00:00",
@@ -205,7 +205,7 @@ const events = [
   },
   {
     "name": "Smash Tournament",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "01:00:00",
       "end": "02:30:00",
@@ -216,7 +216,7 @@ const events = [
   },
   {
     "name": "Team Jeopardy",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "02:00:00",
       "end": "03:00:00",
@@ -227,7 +227,7 @@ const events = [
   },
   {
     "name": "Breakfast - Dunkin Donuts",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "08:00:00",
       "end": "09:00:00",
@@ -238,7 +238,7 @@ const events = [
   },
   {
     "name": "DevPost Submissions Due",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "11:00:00",
       "end": "12:00:00",
@@ -249,7 +249,7 @@ const events = [
   },
   {
     "name": "Hacking Ends",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "12:00:00",
       "end": "12:00:00",
@@ -260,7 +260,7 @@ const events = [
   },
   {
     "name": "Lunch - Subway",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "12:00:00",
       "end": "13:00:00",
@@ -271,7 +271,7 @@ const events = [
   },
   {
     "name": "Demoing & Judging",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "13:00:00",
       "end": "15:30:00",
@@ -282,7 +282,7 @@ const events = [
   },
   {
     "name": "Deliberations",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "15:30:00",
       "end": "16:00:00",
@@ -293,7 +293,7 @@ const events = [
   },
   {
     "name": "Closing Ceremony",
-    "date": "2020-01-26",
+    "date": "2020-08-07",
     "time": {
       "start": "16:00:00",
       "end": "17:00:00",
