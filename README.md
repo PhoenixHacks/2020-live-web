@@ -5,7 +5,7 @@
 
 The PhoenixHacks LIVE web app is a real-time information hub for hackers to refer to during PhoenixHacks.  Kickstarted with create-react-app.  Design inspired by other hackathon live sites.
 
-![screenshot](D:\Projects\phoenixhacks\live-2020\screenshot.png)
+![screenshot](screenshot.png)
 
 ### Built With
 
