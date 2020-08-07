@@ -1,4 +1,5 @@
 import React from "react";
+import config from '../services/config';
 
 const TimeUnits = () => (
   <div id="timeUnits">
@@ -46,7 +47,7 @@ export default class Timer extends React.Component {
   componentDidMount = () => this.countdown();
 
   countdown = () => {
-    let endDate = new Date("Jan 26, 2020 12:00:00").getTime();
+    let endDate = new Date(config.END_DATE).getTime();
 
     return setInterval(() => {
       let now = new Date().getTime();
