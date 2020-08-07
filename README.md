@@ -3,14 +3,15 @@
 > A web app live site built for PhoenixHacks (Spring 2020).
 >
 
-The PhoenixHacks LIVE web app is a real-time information hub for hackers to refer to during PhoenixHacks.  Kickstarted with create-react-app.  Design inspired by other hackathon live sites.
+The PhoenixHacks LIVE web app is a real-time information hub for hackers to refer to during PhoenixHacks.  
+Kickstarted with create-react-app.  Design inspired by other hackathon live sites.
 
 ![screenshot](screenshot.png)
 
 ### Built With
 
-- **Framework:** React
-- **Hosting:** Github Pages
+- **Framework:** [React](https://reactjs.org/)
+- **Hosting:** [Github Pages](https://pages.github.com/)
 
 ### Installation & Usage
 
@@ -28,10 +29,10 @@ Open [`http://localhost:3000`](http://localhost:3000/) to view it in the browser
 
 #### Production Environment
 
-`yarn build` to build the app for production to the `build` folder. 
+`yarn build` to build the app for production to the `build` folder.  
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.
+The build is minified and the filenames include the hashes.  
 The app is ready to be deployed!
 
 `yarn deploy` to deploy the app to GitHub pages.
