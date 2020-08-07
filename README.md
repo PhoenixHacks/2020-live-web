@@ -1,77 +1,75 @@
 # [PhoenixHacks 2020 Live Site](https://live.phoenixhacks.com)
 
-This project's history can be summarized as such:
- - Originally bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
- - Turned into [MangoHack's 2019 Live Site](https://github.com/MangoHacks/mango2019-live).
- - Heavily modified into the current project.
+> A web app live site built for PhoenixHacks (Spring 2020).
+>
 
-## Available Scripts
+The PhoenixHacks LIVE web app is a real-time information hub for hackers to refer to during PhoenixHacks.  Kickstarted with create-react-app.  Design inspired by other hackathon live sites.
 
-In the project directory, you can run:
+![screenshot](D:\Projects\phoenixhacks\live-2020\screenshot.png)
 
-### [`yarn install`](https://yarnpkg.com/lang/en/docs/cli/install/)
+### Built With
 
-Installs all the dependencies listed within package.json into the local node_modules folder.
+- **Framework:** React
+- **Hosting:** Github Pages
 
-### `yarn start`
+### Installation & Usage
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`git clone https://github.com/PhoenixHacks/2020-live-web.git` to a desired project directory.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+`cd` into the project directory.
 
-### `yarn test`
+`yarn install` to install all dependencies.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Development Environment
 
-### `yarn run build`
+`yarn start` to run the app in development mode.
 
-Builds the app for production to the `build` folder.<br>
+Open [`http://localhost:3000`](http://localhost:3000/) to view it in the browser.
+
+#### Production Environment
+
+`yarn build` to build the app for production to the `build` folder. 
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+The build is minified and the filenames include the hashes.
+The app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`yarn deploy` to deploy the app to GitHub pages.
 
-### `yarn run eject`
+------
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### What is [PhoenixHacks](http://phoenixhacks.com/)?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+PhoenixHacks is an 24-hour Hackathon hosted at Florida Polytechnic University.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Roadmap
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+See the [open issues](https://github.com/PhoenixHacks/2020-live-web/issues) for a list of proposed features (and known issues).
 
-## Learn More
+#### Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Code Splitting
+#### License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Distributed under the MIT License. See `LICENSE` for more information.
 
-### Analyzing the Bundle Size
+#### Contact
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Justin McGettigan - [@jwmcgettigan](https://www.github.com/jwmcgettigan) - [jwmcgettigan@gmail.com](mailto:jwmcgettigan@gmail.com)
 
-### Making a Progressive Web App
+// Add a means of contact for the PhoenixHacks team.  [info.phoenixhacks.com](mailto:info@phoenixhacks.com)?
+// Add a contact point for the current lead of PhoenixHacks?
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+The Repo - https://github.com/PhoenixHacks/2020-live-web
 
-### Advanced Configuration
+#### Acknowledgements
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [@Dysnomia1](https://github.com/Dysnomia1) for design assistance | [calvinhecker88@gmail.com](mailto:calvinhecker88@gmail.com)
+- [MangoHacks2019 Live Site](https://github.com/MangoHacks/mango2019-live) for inspiration regarding the announcements and timer features.

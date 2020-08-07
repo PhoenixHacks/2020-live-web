@@ -135,7 +135,7 @@ export default class Schedule extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {dateFilteredEvents.map((event, index) => (<>
+              {dateFilteredEvents.map(event => (<>
                 <tr key={event.name} onClick={ () => this.toggleDescription(event.name) }
                   className={ this.eventStatus(event, now).status }>
                   <td id={ this.isActive(event, now).id } className="indicator"></td>

@@ -101,7 +101,7 @@ const events = [
       "end": "16:45:00",
     },
     "tags": ["workshop"],
-    "location": "IST-1014",
+    "location": "IST-1012",
     "description": "Learn to control I/O of Arduino, FPGA, and Raspberry Pi."
   },
   {
