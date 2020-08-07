@@ -2,7 +2,6 @@
 # PhoenixHacks 2020 Live Site
 
 > A web app live site built for PhoenixHacks (Spring 2020).
->
 
 The PhoenixHacks LIVE web app is a real-time information hub for hackers to refer to during PhoenixHacks.  
 Kickstarted with create-react-app.  Design inspired by other hackathon live sites.
