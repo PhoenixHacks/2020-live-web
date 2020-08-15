@@ -74,3 +74,4 @@ The Repo - https://github.com/PhoenixHacks/2020-live-web
 
 - [@Dysnomia1](https://github.com/Dysnomia1) for design assistance | [calvinhecker88@gmail.com](mailto:calvinhecker88@gmail.com)
 - [MangoHacks2019 Live Site](https://github.com/MangoHacks/mango2019-live) for inspiration regarding the announcements and timer features.
+- [TreeHacks2019 Live Site](https://github.com/TreeHacks/live-schedule) for inspiration regarding the schedule and AWESOMES features.
