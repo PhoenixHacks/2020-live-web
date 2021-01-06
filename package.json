@@ -9,7 +9,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@widgetbot/react-embed": "^1.2.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bufferutil": "^4.0.1",
     "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
